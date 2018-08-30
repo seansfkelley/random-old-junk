@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7863E0A415DF9EDF00821921 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7863E0A315DF9EDF00821921 /* Cocoa.framework */; };
+		7863E0AE15DF9EDF00821921 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7863E0AC15DF9EDF00821921 /* InfoPlist.strings */; };
+		7863E0B015DF9EDF00821921 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7863E0AF15DF9EDF00821921 /* main.m */; };
+		7863E0B415DF9EDF00821921 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7863E0B215DF9EDF00821921 /* Credits.rtf */; };
+		7863E0B715DF9EDF00821921 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7863E0B615DF9EDF00821921 /* AppDelegate.m */; };
+		7863E0BA15DF9EDF00821921 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7863E0B815DF9EDF00821921 /* MainMenu.xib */; };
+		7863E0C215DF9EFF00821921 /* EventInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7863E0C115DF9EFF00821921 /* EventInterceptor.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7863E09F15DF9EDF00821921 /* TouchyFeely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchyFeely.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7863E0A315DF9EDF00821921 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7863E0A615DF9EDF00821921 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7863E0A715DF9EDF00821921 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7863E0A815DF9EDF00821921 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7863E0AB15DF9EDF00821921 /* TouchyFeely-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TouchyFeely-Info.plist"; sourceTree = "<group>"; };
+		7863E0AD15DF9EDF00821921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7863E0AF15DF9EDF00821921 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7863E0B115DF9EDF00821921 /* TouchyFeely-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchyFeely-Prefix.pch"; sourceTree = "<group>"; };
+		7863E0B315DF9EDF00821921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7863E0B515DF9EDF00821921 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7863E0B615DF9EDF00821921 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7863E0B915DF9EDF00821921 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7863E0C015DF9EFF00821921 /* EventInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventInterceptor.h; sourceTree = "<group>"; };
+		7863E0C115DF9EFF00821921 /* EventInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventInterceptor.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7863E09C15DF9EDF00821921 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7863E0A415DF9EDF00821921 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7863E09415DF9EDF00821921 = {
+			isa = PBXGroup;
+			children = (
+				7863E0A915DF9EDF00821921 /* TouchyFeely */,
+				7863E0A215DF9EDF00821921 /* Frameworks */,
+				7863E0A015DF9EDF00821921 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7863E0A015DF9EDF00821921 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7863E09F15DF9EDF00821921 /* TouchyFeely.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7863E0A215DF9EDF00821921 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7863E0A315DF9EDF00821921 /* Cocoa.framework */,
+				7863E0A515DF9EDF00821921 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7863E0A515DF9EDF00821921 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7863E0A615DF9EDF00821921 /* AppKit.framework */,
+				7863E0A715DF9EDF00821921 /* CoreData.framework */,
+				7863E0A815DF9EDF00821921 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7863E0A915DF9EDF00821921 /* TouchyFeely */ = {
+			isa = PBXGroup;
+			children = (
+				7863E0B515DF9EDF00821921 /* AppDelegate.h */,
+				7863E0B615DF9EDF00821921 /* AppDelegate.m */,
+				7863E0C015DF9EFF00821921 /* EventInterceptor.h */,
+				7863E0C115DF9EFF00821921 /* EventInterceptor.m */,
+				7863E0B815DF9EDF00821921 /* MainMenu.xib */,
+				7863E0AA15DF9EDF00821921 /* Supporting Files */,
+			);
+			path = TouchyFeely;
+			sourceTree = "<group>";
+		};
+		7863E0AA15DF9EDF00821921 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7863E0AB15DF9EDF00821921 /* TouchyFeely-Info.plist */,
+				7863E0AC15DF9EDF00821921 /* InfoPlist.strings */,
+				7863E0AF15DF9EDF00821921 /* main.m */,
+				7863E0B115DF9EDF00821921 /* TouchyFeely-Prefix.pch */,
+				7863E0B215DF9EDF00821921 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7863E09E15DF9EDF00821921 /* TouchyFeely */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7863E0BD15DF9EDF00821921 /* Build configuration list for PBXNativeTarget "TouchyFeely" */;
+			buildPhases = (
+				7863E09B15DF9EDF00821921 /* Sources */,
+				7863E09C15DF9EDF00821921 /* Frameworks */,
+				7863E09D15DF9EDF00821921 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TouchyFeely;
+			productName = TouchyFeely;
+			productReference = 7863E09F15DF9EDF00821921 /* TouchyFeely.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7863E09615DF9EDF00821921 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Sean Kelley";
+			};
+			buildConfigurationList = 7863E09915DF9EDF00821921 /* Build configuration list for PBXProject "TouchyFeely" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7863E09415DF9EDF00821921;
+			productRefGroup = 7863E0A015DF9EDF00821921 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7863E09E15DF9EDF00821921 /* TouchyFeely */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7863E09D15DF9EDF00821921 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7863E0AE15DF9EDF00821921 /* InfoPlist.strings in Resources */,
+				7863E0B415DF9EDF00821921 /* Credits.rtf in Resources */,
+				7863E0BA15DF9EDF00821921 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7863E09B15DF9EDF00821921 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7863E0B015DF9EDF00821921 /* main.m in Sources */,
+				7863E0B715DF9EDF00821921 /* AppDelegate.m in Sources */,
+				7863E0C215DF9EFF00821921 /* EventInterceptor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7863E0AC15DF9EDF00821921 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7863E0AD15DF9EDF00821921 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7863E0B215DF9EDF00821921 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7863E0B315DF9EDF00821921 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		7863E0B815DF9EDF00821921 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7863E0B915DF9EDF00821921 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7863E0BB15DF9EDF00821921 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7863E0BC15DF9EDF00821921 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7863E0BE15DF9EDF00821921 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TouchyFeely/TouchyFeely-Prefix.pch";
+				INFOPLIST_FILE = "TouchyFeely/TouchyFeely-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7863E0BF15DF9EDF00821921 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TouchyFeely/TouchyFeely-Prefix.pch";
+				INFOPLIST_FILE = "TouchyFeely/TouchyFeely-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7863E09915DF9EDF00821921 /* Build configuration list for PBXProject "TouchyFeely" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7863E0BB15DF9EDF00821921 /* Debug */,
+				7863E0BC15DF9EDF00821921 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7863E0BD15DF9EDF00821921 /* Build configuration list for PBXNativeTarget "TouchyFeely" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7863E0BE15DF9EDF00821921 /* Debug */,
+				7863E0BF15DF9EDF00821921 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7863E09615DF9EDF00821921 /* Project object */;
+}

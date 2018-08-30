@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'GraphKitDemo' target in the 'GraphKitDemo' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#define NS_BUILD_32_LIKE_64 1
+#endif
