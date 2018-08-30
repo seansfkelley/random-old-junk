@@ -1,0 +1,287 @@
+=== Run information ===
+
+Scheme:weka.classifiers.meta.AdaBoostM1 -P 100 -S 1 -I 10 -W weka.classifiers.trees.DecisionStump
+Relation:     waveform
+Instances:    600
+Attributes:   15
+              x0
+              x1
+              x2
+              x3
+              x4
+              x5
+              x6
+              x7
+              x8
+              x9
+              x10
+              x11
+              x12
+              x13
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+AdaBoostM1: Base classifiers and their weights: 
+
+Decision Stump
+
+Classifications
+
+x7 <= 2.965 : +
+x7 > 2.965 : -
+x7 is missing : +
+
+Class distributions
+
+x7 <= 2.965
+-	+	
+0.28662420382165604	0.7133757961783439	
+x7 > 2.965
+-	+	
+0.7167832167832168	0.28321678321678323	
+x7 is missing
+-	+	
+0.49166666666666664	0.5083333333333333	
+
+
+Weight: 0.92
+
+Decision Stump
+
+Classifications
+
+x8 <= 2.585 : +
+x8 > 2.585 : -
+x8 is missing : -
+
+Class distributions
+
+x8 <= 2.585
+-	+	
+0.3284192825112104	0.6715807174887896	
+x8 > 2.585
+-	+	
+0.6018154896027786	0.39818451039722136	
+x8 is missing
+-	+	
+0.5020856336645801	0.4979143663354199	
+
+
+Weight: 0.52
+
+Decision Stump
+
+Classifications
+
+x8 <= 5.6850000000000005 : +
+x8 > 5.6850000000000005 : -
+x8 is missing : +
+
+Class distributions
+
+x8 <= 5.6850000000000005
+-	+	
+0.45086683349022677	0.5491331665097732	
+x8 > 5.6850000000000005
+-	+	
+0.9999999999997744	2.2557613224579454E-13	
+x8 is missing
+-	+	
+0.4654288777238763	0.5345711222761238	
+
+
+Weight: 0.25
+
+Decision Stump
+
+Classifications
+
+x5 <= 2.535 : +
+x5 > 2.535 : -
+x5 is missing : -
+
+Class distributions
+
+x5 <= 2.535
+-	+	
+0.43244940707903856	0.5675505929209614	
+x5 > 2.535
+-	+	
+0.6120410554175425	0.38795894458245733	
+x5 is missing
+-	+	
+0.5236310294556085	0.47636897054439165	
+
+
+Weight: 0.36
+
+Decision Stump
+
+Classifications
+
+x4 <= 4.405 : -
+x4 > 4.405 : +
+x4 is missing : -
+
+Class distributions
+
+x4 <= 4.405
+-	+	
+0.5456212244760875	0.4543787755239126	
+x4 > 4.405
+-	+	
+0.16760322598582847	0.8323967740141716	
+x4 is missing
+-	+	
+0.5229870169082829	0.47701298309171714	
+
+
+Weight: 0.25
+
+Decision Stump
+
+Classifications
+
+x8 <= 5.6850000000000005 : +
+x8 > 5.6850000000000005 : -
+x8 is missing : +
+
+Class distributions
+
+x8 <= 5.6850000000000005
+-	+	
+0.45633155423010213	0.5436684457698979	
+x8 > 5.6850000000000005
+-	+	
+0.9999999999999388	6.110702400306543E-14	
+x8 is missing
+-	+	
+0.467196958980432	0.532803041019568	
+
+
+Weight: 0.21
+
+Decision Stump
+
+Classifications
+
+x9 <= 0.435 : +
+x9 > 0.435 : -
+x9 is missing : -
+
+Class distributions
+
+x9 <= 0.435
+-	+	
+0.18701194828940584	0.8129880517105941	
+x9 > 0.435
+-	+	
+0.535209334754706	0.46479066524529394	
+x9 is missing
+-	+	
+0.5180768548587372	0.4819231451412629	
+
+
+Weight: 0.2
+
+Decision Stump
+
+Classifications
+
+x8 <= 5.6850000000000005 : +
+x8 > 5.6850000000000005 : -
+x8 is missing : +
+
+Class distributions
+
+x8 <= 5.6850000000000005
+-	+	
+0.46494817583455256	0.5350518241654474	
+x8 > 5.6850000000000005
+-	+	
+0.9999999999999651	3.47890102075704E-14	
+x8 is missing
+-	+	
+0.47375894265781454	0.5262410573421855	
+
+
+Weight: 0.17
+
+Decision Stump
+
+Classifications
+
+x2 <= 1.02 : -
+x2 > 1.02 : +
+x2 is missing : -
+
+Class distributions
+
+x2 <= 1.02
+-	+	
+0.6120125662556675	0.3879874337443326	
+x2 > 1.02
+-	+	
+0.46035140789704077	0.5396485921029592	
+x2 is missing
+-	+	
+0.5151712544150759	0.4848287455849241	
+
+
+Weight: 0.26
+
+Decision Stump
+
+Classifications
+
+x7 <= 2.795 : -
+x7 > 2.795 : +
+x7 is missing : -
+
+Class distributions
+
+x7 <= 2.795
+-	+	
+0.6187422719591588	0.38125772804084124	
+x7 > 2.795
+-	+	
+0.46131987745878617	0.5386801225412138	
+x7 is missing
+-	+	
+0.5339930916817195	0.4660069083182805	
+
+
+Weight: 0.3
+
+Number of performed Iterations: 10
+
+
+Time taken to build model: 0.06 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         420               70      %
+Incorrectly Classified Instances       180               30      %
+Kappa statistic                          0.3989
+Mean absolute error                      0.3704
+Root mean squared error                  0.4487
+Relative absolute error                 74.0897 %
+Root relative squared error             89.7495 %
+Total Number of Instances              600     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.647     0.249      0.715     0.647     0.68       0.76     -
+                 0.751     0.353      0.688     0.751     0.718      0.76     +
+Weighted Avg.    0.7       0.302      0.701     0.7       0.699      0.76 
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 191 104 |   a = -
+  76 229 |   b = +
+

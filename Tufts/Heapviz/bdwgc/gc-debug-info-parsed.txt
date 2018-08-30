@@ -1,0 +1,231 @@
+class Node (16 bytes)
+   0x0  int                             datum
+   0x8  Node*                           next
+
+class _IO_FILE (216 bytes)
+   0x0  int                             _flags
+   0x8  char*                           _IO_read_ptr
+  0x10  char*                           _IO_read_end
+  0x18  char*                           _IO_read_base
+  0x20  char*                           _IO_write_base
+  0x28  char*                           _IO_write_ptr
+  0x30  char*                           _IO_write_end
+  0x38  char*                           _IO_buf_base
+  0x40  char*                           _IO_buf_end
+  0x48  char*                           _IO_save_base
+  0x50  char*                           _IO_backup_base
+  0x58  char*                           _IO_save_end
+  0x60  _IO_marker*                     _markers
+  0x68  _IO_FILE*                       _chain
+  0x70  int                             _fileno
+  0x74  int                             _flags2
+  0x78  __off_t (long int)              _old_offset
+  0x80  short unsigned int              _cur_column
+  0x82  signed char                     _vtable_offset
+  0x83  char[]                          _shortbuf
+  0x88  unknown*                        _lock
+  0x90  __off64_t (long int)            _offset
+  0x98  unknown*                        __pad1
+  0xa0  unknown*                        __pad2
+  0xa8  unknown*                        __pad3
+  0xb0  unknown*                        __pad4
+  0xb8  size_t (long unsigned int)      __pad5
+  0xc0  int                             _mode
+  0xc4  char[]                          _unused2
+
+  class ._2 (4 bytes)
+     0x0  wint_t (unsigned int)           __wch
+     0x0  char[]                          __wchb
+
+class ._1 (8 bytes)
+   0x0  int                             __count
+   0x4  ._2                             __value
+
+class ._3 (16 bytes)
+   0x0  __off_t (long int)              __pos
+   0x8  ._1                             __state
+
+class __va_list_tag (24 bytes)
+   0x0  unsigned int                    gp_offset
+   0x4  unsigned int                    fp_offset
+   0x8  unknown*                        overflow_arg_area
+  0x10  unknown*                        reg_save_area
+
+class _IO_marker (24 bytes)
+   0x0  _IO_marker*                     _next
+   0x8  _IO_FILE*                       _sbuf
+  0x10  int                             _pos
+
+class ._12 (8 bytes)
+   0x0  int                             quot
+   0x4  int                             rem
+
+class ._13 (16 bytes)
+   0x0  long int                        quot
+   0x8  long int                        rem
+
+class ._14 (16 bytes)
+   0x0  long long int                   quot
+   0x8  long long int                   rem
+
+  class _Rb_tree_node_base
+
+  class _Rb_tree_node<Dummy>
+
+  class binary_function<Dummy,Dummy,bool>
+
+  class less<Dummy>
+
+    class _Rb_tree_impl<std::less<Dummy>,false> (48 bytes)
+       0x0  <anon class>                    _M_key_compare
+       0x8  <anon class>                    _M_header
+      0x28  size_t (long unsigned int)      _M_node_count
+
+  class _Rb_tree<Dummy,Dummy,std::_Identity<Dummy>,std::less<Dummy>,gc_allocator<Dummy> >
+
+  class _Rb_tree_iterator<Dummy>
+
+  class _Rb_tree_const_iterator<Dummy>
+
+  class reverse_iterator<std::_Rb_tree_iterator<Dummy> >
+
+  class reverse_iterator<std::_Rb_tree_const_iterator<Dummy> >
+
+  class pair<std::_Rb_tree_iterator<Dummy>,bool>
+
+  class pair<std::_Rb_tree_iterator<Dummy>,std::_Rb_tree_iterator<Dummy> >
+
+  class pair<std::_Rb_tree_const_iterator<Dummy>,std::_Rb_tree_const_iterator<Dummy> >
+
+  class set<Dummy,std::less<Dummy>,gc_allocator<Dummy> >
+
+  class pair<std::_Rb_tree_const_iterator<Dummy>,bool>
+
+  class unary_function<Dummy,Dummy>
+
+  class _Identity<Dummy>
+
+class GC_false_type (1 bytes)
+
+class Dummy (4 bytes)
+   0x0  int                             datum
+
+class lconv (96 bytes)
+   0x0  char*                           decimal_point
+   0x8  char*                           thousands_sep
+  0x10  char*                           grouping
+  0x18  char*                           int_curr_symbol
+  0x20  char*                           currency_symbol
+  0x28  char*                           mon_decimal_point
+  0x30  char*                           mon_thousands_sep
+  0x38  char*                           mon_grouping
+  0x40  char*                           positive_sign
+  0x48  char*                           negative_sign
+  0x50  char                            int_frac_digits
+  0x51  char                            frac_digits
+  0x52  char                            p_cs_precedes
+  0x53  char                            p_sep_by_space
+  0x54  char                            n_cs_precedes
+  0x55  char                            n_sep_by_space
+  0x56  char                            p_sign_posn
+  0x57  char                            n_sign_posn
+  0x58  char                            int_p_cs_precedes
+  0x59  char                            int_p_sep_by_space
+  0x5a  char                            int_n_cs_precedes
+  0x5b  char                            int_n_sep_by_space
+  0x5c  char                            int_p_sign_posn
+  0x5d  char                            int_n_sign_posn
+
+class tm (56 bytes)
+   0x0  int                             tm_sec
+   0x4  int                             tm_min
+   0x8  int                             tm_hour
+   0xc  int                             tm_mday
+  0x10  int                             tm_mon
+  0x14  int                             tm_year
+  0x18  int                             tm_wday
+  0x1c  int                             tm_yday
+  0x20  int                             tm_isdst
+  0x28  long int                        tm_gmtoff
+  0x30  unknown*                        tm_zone
+
+class <anon class> (32 bytes)
+   0x0  0x00000acf                      _M_color
+   0x8  <anon class>*                   _M_parent
+  0x10  <anon class>*                   _M_left
+  0x18  <anon class>*                   _M_right
+
+class gc_allocator<Dummy> (1 bytes)
+
+class gc_allocator<std::_Rb_tree_node<Dummy> > (1 bytes)
+
+class <anon class> (1 bytes)
+
+class <anon class> (1 bytes)
+
+class <anon class> (48 bytes)
+   0x0  _Rb_tree_impl<std::less<Dummy>,false>  _M_impl
+
+class <anon class> (48 bytes)
+   0x0  <anon class>                    _M_t
+
+class <anon class> (8 bytes)
+   0x0  unknown*                        _M_node
+
+class <anon class> (16 bytes)
+   0x0  <anon class>                    first
+   0x8  bool                            second
+
+class <anon class> (8 bytes)
+   0x0  <anon class>*                   _M_node
+
+class <anon class> (16 bytes)
+   0x0  <anon class>                    first
+   0x8  bool                            second
+
+class <anon class> (40 bytes)
+  0x20  Dummy                           _M_value_field
+
+class <anon class> (1 bytes)
+
+class <anon class> (1 bytes)
+
+class GC_type_traits<std::_Rb_tree_node<Dummy> > (1 bytes)
+   0x0  GC_false_type                   GC_is_ptr_free
+
+class _IO_FILE (216 bytes)
+   0x0  int                             _flags
+   0x8  char*                           _IO_read_ptr
+  0x10  char*                           _IO_read_end
+  0x18  char*                           _IO_read_base
+  0x20  char*                           _IO_write_base
+  0x28  char*                           _IO_write_ptr
+  0x30  char*                           _IO_write_end
+  0x38  char*                           _IO_buf_base
+  0x40  char*                           _IO_buf_end
+  0x48  char*                           _IO_save_base
+  0x50  char*                           _IO_backup_base
+  0x58  char*                           _IO_save_end
+  0x60  _IO_marker*                     _markers
+  0x68  _IO_FILE*                       _chain
+  0x70  int                             _fileno
+  0x74  int                             _flags2
+  0x78  __off_t (long int)              _old_offset
+  0x80  short unsigned int              _cur_column
+  0x82  signed char                     _vtable_offset
+  0x83  char[]                          _shortbuf
+  0x88  unknown*                        _lock
+  0x90  __off64_t (long int)            _offset
+  0x98  unknown*                        __pad1
+  0xa0  unknown*                        __pad2
+  0xa8  unknown*                        __pad3
+  0xb0  unknown*                        __pad4
+  0xb8  size_t (long unsigned int)      __pad5
+  0xc0  int                             _mode
+  0xc4  char[]                          _unused2
+
+class _IO_marker (24 bytes)
+   0x0  _IO_marker*                     _next
+   0x8  _IO_FILE*                       _sbuf
+  0x10  int                             _pos
+

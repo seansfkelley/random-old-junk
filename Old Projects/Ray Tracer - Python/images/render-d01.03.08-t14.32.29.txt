@@ -1,0 +1,9 @@
+dimensions: 1024x768, 786432 pixels total
+time: 15:49:42
+shape count: 41
+camera: <512, 256, 1024>
+focus: <128, 0, 0>
+grid distance: 469.256
+resolution: 1
+
+notes: First large render. I didn't use resolution/camera correctly and so the image is too small. However, the focal point worked. Also the first render to have a text file like this, and so will be the beginning of my notes.

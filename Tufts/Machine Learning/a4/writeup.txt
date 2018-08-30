@@ -1,0 +1,119 @@
+Sean Kelley
+Assignment 4
+
+2a)
+k =  1: accuracy = 0.955056
+k =  3: accuracy = 0.955056
+k =  5: accuracy = 0.971910
+k =  7: accuracy = 0.966292
+k =  9: accuracy = 0.966292
+k = 11: accuracy = 0.977528
+k = 13: accuracy = 0.960674
+k = 15: accuracy = 0.966292
+k = 17: accuracy = 0.960674
+k = 19: accuracy = 0.971910
+k = 21: accuracy = 0.971910
+
+b)
+The differences between kNN with different ks on the normalized data is very small. k = 11 produces the best result, but it's not far ahead of many of the other ks. It would be better to run this on a larger data set to get a more accurate answer, but currently 11 is the best choice.
+
+c)
+Z-score normalization resulted in a significant accuracy improvement -- from about 70-75% for various values of k to 95% or higher for those same values.
+
+d)
+Z-score normalization may not be helpful for decision trees, because unlike kNN, decision trees operate using the relative ranks of each data point with respect to each feature. Normalization aims to correct error introduced by unevenly weighted variable values, but it does not change the relative ranks. kNN factors in the actual value of each feature, which is where normalization is able to correct error. For this reason, kNN on a different problem domain will likely also benefit from normalization. For other types of classifiers that use values rather than simply rankings, normalization may also be useful.
+
+3a i)
+correlations
+f04: 0.436922
+f13: 0.368269
+f14: 0.368224
+f16: 0.366025
+f07: 0.352141
+f22: 0.351350
+f26: 0.341043
+f01: 0.308811
+f20: 0.299049
+f31: 0.290783
+f34: 0.266093
+f02: 0.195732
+f28: 0.156904
+f25: 0.153096
+f19: 0.137636
+f17: 0.113945
+f32: 0.093174
+f08: 0.087773
+f00: 0.069795
+f10: 0.056876
+f21: 0.056605
+f11: 0.042117
+f33: 0.038810
+f06: 0.035295
+f15: 0.031478
+f35: 0.030855
+f29: 0.020829
+f18: 0.017931
+f27: 0.015606
+f09: 0.013005
+f03: 0.009214
+f30: 0.008955
+f24: 0.007780
+f23: 0.005508
+f12: 0.002179
+f05: 0.000098
+
+The absolute value is more informative, because we don't care about direct or indirect correlation, simply the magnitude of the correlation. The magnitude tells us which features are likely to be useful; direction of correlation does not add anything.
+
+ii)
+The best accuracy is 0.925532 at m = 20.
+
+b i/ii)
+[20]
+accuracy = 0.797872
+
+[20, 10]
+accuracy = 0.860520
+
+[20, 10, 19]
+accuracy = 0.890071
+
+[20, 10, 19, 8]
+accuracy = 0.916076
+
+[20, 10, 19, 8, 7]
+accuracy = 0.936170
+
+[20, 10, 19, 8, 7, 14]
+accuracy = 0.951537
+
+[20, 10, 19, 8, 7, 14, 2]
+accuracy = 0.952719
+
+[20, 10, 19, 8, 7, 14, 2, 1]
+accuracy = 0.959811
+
+[20, 10, 19, 8, 7, 14, 2, 1, 16]
+accuracy = 0.965721 <- optimal accuracy
+
+[20, 10, 19, 8, 7, 14, 2, 1, 16, 4]
+accuracy = 0.963357 <- accuracy decreases: terminate algorithm
+
+ci)
+The method combines the information correlation coefficients provide towards directing the algorithm and the per-step recalculations that the wrapper method performs. Each feature's correlation coefficient is computed with respect to each other feature and the class variable. The feature with the highest correlation with the class variable is chosen first. To select the next feature, each candidate feature is assigned a score based on its correlation to each of the currently selected features and the class variable. Like the filter algorithm, this is run until every feature has been added. The best configuration is supplied below.
+
+The idea was to incorporate the information I have in already-selected features: what if two features are highly correlated with each other and also the class variable? Both are probably not useful, and we want to recalculate some type of score that reflects the pointless redundancy and prefers another variable that adds more information. I do not have the statistics background to justify any heuristic I chose, so I tried a few (which are all left in the source) and chose the best.
+
+For each candidate, the heuristic adds the logs of the candidate's correlation with respect to the selected feature set (plus one, to keep them positive) and multiplies the whole by the candidate's correlation to the class variable. This avoids problems with underflow/numerical accuracy other heuristics had and still performs well.
+
+ii)
+[4, 14, 13, 16, 22, 7, 20, 1, 2, 25, 19, 34, 26, 31, 32, 28, 8, 10]; added in that order
+
+iii)
+accuracy = 0.951537: better and negligibly slower than filter, and almost as good as wrapper and several times the speed.
+
+d)
+The filter approach is advantageous because it is a greedy algorithm: it guarantees improvement at each step until termination. It explores many more possibilities than the wrapper approach and in doing so ends up with a superior feature set. The downside is that it takes much more computational effort to arrive at this answer: O(n^2) rather than O(n) for n features.
+
+e)
+The wrapper approach is advantageous because it's more intelligent and directed than the filter approach. It picks features to test based on an a priori test of their "usefulness" and produces results considerably faster (as mentioned in the previous part). The downside is that though the correlation values may be related to the better choices, they're not necessarily the best: this is seen in the fact that it produced an inferior answer at each number of features with respect to the filter approach. This method may also be misguided by features that are highly correlated with each other as well as the classes: both will rank high in correlation ratings, but having both features selected will add little or no information and may even lower accuracy.
+

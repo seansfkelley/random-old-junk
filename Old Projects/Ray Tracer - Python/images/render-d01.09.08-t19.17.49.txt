@@ -1,0 +1,10 @@
+dimensions: 128x128, 16384 pixels total
+time: 0:10:17
+shape count: 10
+camera: <-750, 1000, 2000>
+focus: <0, 0, 0>
+grid distance: 1179.248
+resolution: 1.000
+rotation: 0.000
+
+notes: The second of two images to compare lighting. This one is noticeably darker, which is good. The method seems to work (though it's a bit of an approximation as far as I can tell, it's nevertheless a good one). The next step is to experiment with lower-than-1 values for light to see how they interact, but more importantly to get falloff on the intensity of the light working.

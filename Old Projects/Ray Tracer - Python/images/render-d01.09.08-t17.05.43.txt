@@ -1,0 +1,10 @@
+dimensions: 128x128, 16384 pixels total
+time: 0:24:23
+shape count: 22
+camera: <-750, 1000, 2000>
+focus: <0, 0, 0>
+grid distance: 1179.248
+resolution: 1.000
+rotation: 0.000
+
+notes: Fixed the stretch problem - it was an extraneous 'not'. When the camera corners got rotated the wrong way, they were supposed to be rotated in the opposite direction, but the not made it so that never happened. Now everything looks kind of squat, but it's correct.

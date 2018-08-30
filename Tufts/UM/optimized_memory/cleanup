@@ -1,0 +1,5 @@
+rm -f *~
+rm -f \#*\#
+rm -f core*
+rm -f vgcore*
+rm -f *.o

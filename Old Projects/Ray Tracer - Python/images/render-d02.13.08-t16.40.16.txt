@@ -1,0 +1,10 @@
+dimensions: 64x64, 4096 pixels total
+time: 0:07:17
+shape count: 20
+camera: <1500, 1000, 1000>
+focus: <0, 0, 0>
+grid distance: 1585.810
+resolution: 2.000
+rotation: 0.000
+
+notes: A quick render to compare to the next one.

@@ -1,0 +1,6 @@
+firing pattern
+(start_frame, {frame_num_1: ((dmg, img_name, mov), (dmg, img_name, mov)...),
+               frame_num_2: (...)})
+
+enemy specs
+((start_x, start_y), life, img_name, mov, max_height_or_-1, (vary_x_pct, vary_y_pct), collidable)

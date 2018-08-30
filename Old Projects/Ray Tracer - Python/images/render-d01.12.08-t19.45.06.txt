@@ -1,0 +1,10 @@
+dimensions: 512x512, 262144 pixels total
+time: 19:56:19
+shape count: 100
+camera: <1000, 1000, 1000>
+focus: <0, 0, 0>
+grid distance: 1332.347
+resolution: 4.000
+rotation: 0.000
+
+notes: First big render with terrain. Why all the blocks but the topmost one have no top, I don't know.

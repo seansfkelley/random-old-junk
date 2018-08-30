@@ -1,0 +1,10 @@
+dimensions: 256x256, 65536 pixels total
+time: 0:43:31
+shape count: 11
+camera: <-750, -500, 2000>
+focus: <0, 0, 0>
+grid distance: 548.435
+resolution: 1.000
+rotation: 0.000
+
+notes: My favorite render to date. The ambient light is working perfectly, the sphere looks nice, and the colors randomly chosen are natural and go well together. Fixed the problem with the sphere.

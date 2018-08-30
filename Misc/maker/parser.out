@@ -1,0 +1,58 @@
+Created by PLY version 3.0 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 1     S' -> line
+Rule 2     line -> INCLUDE FILENAME
+Rule 3     line -> CATCHALL
+
+Terminals, with rules where they appear
+
+CATCHALL             : 2
+FILENAME             : 1
+INCLUDE              : 1
+error                : 
+
+Nonterminals, with rules where they appear
+
+line                 : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . line
+    (1) line -> . INCLUDE FILENAME
+    (2) line -> . CATCHALL
+
+    INCLUDE         shift and go to state 2
+    CATCHALL        shift and go to state 3
+
+    line                           shift and go to state 1
+
+state 1
+
+    (0) S' -> line .
+
+
+
+state 2
+
+    (1) line -> INCLUDE . FILENAME
+
+    FILENAME        shift and go to state 4
+
+
+state 3
+
+    (2) line -> CATCHALL .
+
+    $end            reduce using rule 2 (line -> CATCHALL .)
+
+
+state 4
+
+    (1) line -> INCLUDE FILENAME .
+
+    $end            reduce using rule 1 (line -> INCLUDE FILENAME .)
+

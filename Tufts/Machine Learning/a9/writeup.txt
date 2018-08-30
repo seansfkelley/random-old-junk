@@ -1,0 +1,14 @@
+Sean Kelley
+
+AL v. Random Sampling
+
+As can be seen on the charts, active learning definitely outperforms random sampling in almost every case (with the unusual exception of twsp and k = 11). Some margins are smaller than others and sometimes it dips below the curve for random sampling, but the general trend is in favor of active learning.
+
+Based on these two datasets, there didn't seem to be a reliable pattern to the way that k factored into the performance (at least, with the values for k that I tested with). For twsp, higher values of k dropped both accuracies (though active learning remained on top) at almost every stage. Strangely, the "converged" performance on twsp dropped dramatically between k = 5 and k = 7. I found this very surprising, though after a long time spent retesting the code and input data I was not able to produce results that were more in line with my expectations -- that is, a much smaller drop in accuracy, and little to no drop in accuracy when all datapoints were labeled. At least the dropping trend was consistent, to the point where at k = 11 both classifiers were reliably less than 50% accurate, meaning they had inadvertently trained into slightly-more-accurate reverse-classifiers.
+
+The usps dataset seemed mostly unaffected. Comparing the four graphs shows a constant decrease in accuracy from the lower values of k, but the shapes of the curves and their relative performances were mostly constant, including the early dominance of random sampling in all four cases.
+
+Accuracy drops are not surprising with increasing values of k, as more and more irrelevant datapoints are being factored into the classification.
+
+Weka
+

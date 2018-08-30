@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2010)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paper.aux
+The style file: plain.bst
+Database file #1: heapvis.bib
+Warning--empty journal in marron10abstraction
+You've used 28 entries,
+            2118 wiz_defined-function locations,
+            789 strings with 11863 characters,
+and the built_in function-call counts, 10778 in all, are:
+= -- 1065
+> -- 458
+< -- 18
++ -- 187
+- -- 154
+* -- 637
+:= -- 1625
+add.period$ -- 87
+call.type$ -- 28
+change.case$ -- 162
+chr.to.int$ -- 0
+cite$ -- 29
+duplicate$ -- 481
+empty$ -- 892
+format.name$ -- 154
+if$ -- 2415
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 23
+newline$ -- 142
+num.names$ -- 52
+pop$ -- 232
+preamble$ -- 1
+purify$ -- 135
+quote$ -- 0
+skip$ -- 395
+stack$ -- 0
+substring$ -- 629
+swap$ -- 184
+text.length$ -- 18
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 110
+warning$ -- 1
+while$ -- 99
+width$ -- 30
+write$ -- 307
+(There was 1 warning)

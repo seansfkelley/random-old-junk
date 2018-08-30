@@ -1,0 +1,20 @@
+digraph linkedlist {
+  //ranksep=1.25;
+
+  // head
+  A [label="LinkedList"];
+
+  // nodes
+  B [label="LinkedList$Entry"];
+
+  // data
+  F [label="T"];
+
+  A -> B [label="head,tail"];
+
+  B -> F [label="entry"];
+
+  { rank=source; A }
+  { rank=same; B }
+  { rank=sink; F }
+}

@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Force-Directed Layout</title>
+    <script type="text/javascript" src="./CS_Site/protovis-r3.2.js"></script>
+    <script type="text/javascript" src="./CS_Site/collaboration data.js"></script>
+    <style type="text/css">
+
+body {
+  margin: 0;
+}
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript+protovis">
+
+var w = document.body.clientWidth,
+    h = document.body.clientHeight,
+    //             Color for a department.           Color for a person.
+    node_colors = [pv.color("rgba(32, 67, 131, 0.1)"), pv.color("rgba(255, 160, 13, 0.1)")],
+    //             Person-department link color.    Person-person link color.
+    link_colors = [pv.color("rgba(32, 67, 131, 0.2)"), pv.color("rgba(255, 160, 13, 0.2)")],
+    drag_color = pv.color("rgba(100, 100, 100, 0.4)")
+
+var vis = new pv.Panel()
+    .width(w)
+    .height(h)
+    .fillStyle("white")
+    .event("mousedown", pv.Behavior.pan())
+    .event("mousewheel", pv.Behavior.zoom(0.5));
+
+var force = vis.add(pv.Layout.Force)
+    .nodes(data.nodes)
+    .links(data.links);
+
+force.label.add(pv.Label)
+    .text(function(d) d.nodeName)
+    .font("12px Optima")
+    .textMargin(6);
+
+force.link.add(pv.Line)
+    .strokeStyle(function(n, l) link_colors[l.person_person_link ? 1 : 0]);
+
+force.node.add(pv.Dot)
+    .size(2)
+    .fillStyle(function(d) node_colors[d.is_person ? 1 : 0])
+    .strokeStyle(function(d) d.fix ? drag_color : null)
+    .lineWidth(1.5)
+    .title(function(d) d.nodeName)
+    .event("mousedown", pv.Behavior.drag())
+    .event("drag", force);
+	
+vis.render();
+
+    </script>
+  </body>
+</html>

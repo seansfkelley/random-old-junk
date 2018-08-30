@@ -1,0 +1,1380 @@
+%%!TEX root = ./project-description.tex
+
+
+@string {SIGMETRICS = {{ACM} Languages, Compilers, and Tools for Embedded Systems}}
+@string {LCTES = {{ACM} Languages, Compilers, and Tools for Embedded Systems}}
+@string {ICSE = "International Conference on Software Engineering"}
+@string {ISCA90 = "International Symposium on Computer Architecture"}
+@string {ASPLOS = "{ACM} Conference on Architectural Support for Programming
+		 Languages and Operating Systems"}
+@string {MSP = "{ACM} Conference on  Memory System Performance"} 
+@string {MSPC = "{ACM} Workshop on  Memory System Performance and Correctness"} 
+@string {PLDI = "{ACM} Conference on Programming Languages Design and Implementation"}
+@string {SOSP = "{ACM} Symposium on Operating Systems Principles"}
+@string {ECOOP = {The European Conference on Object-Oriented Programming}} 
+@string {OOPSLA = {{ACM} Conference on Object-Oriented 
+                   Programming Systems, Languages, and Applications}}
+@string {CC = {International Conference on Compiler Construction}}
+@string {SP&E = "Software---Practice and Experience"}
+@string {CGO = "International Symposium on Code Generation and Optimization"}
+@string {VEE = "International Conference on Virtual Execution Environments"}
+@string {POPL = "{ACM} Symposium on the Principles of Programming Languages"}
+@string {ISMM = {{ACM} International Symposium on Memory Management}}
+@string {IWMM = {{ACM} International Workshop on Memory Management}}
+@string {ICFP = {{ACM} International Conference on Functional Programming}}
+@string {FPLCA = {{ACM} Inteornational Conference on Functional Programming Languages and Computer Architecture}}
+@string {JGI = {{ACM} Java Grande - ISCOPE 2002 Conference}}
+@string {SAS = "International Static Analysis Symposium"}
+@string {LCPC = "Workshop on Languages and Compilers for Parallel Computing"}
+@string {DSL = "{USENIX} Conference on Domain-Specific Languages"}
+@string {ISSTA = "International Symposium on Software Testing and Analysis"}
+@string {CAV = "Computer Aided Verification"}
+
+@string {SOFTVIS = "{ACM} Symposium on Software Visualization"}
+
+@string {TR = "Technical Report"}
+
+% journal ABBREVIATIONS
+
+@string {ActInf = "Acta Informatica"}
+@string {CACM = "Communications of the {ACM}"}
+@string {CompJ = "Computer Journal"}
+@string {Dobbs = "Dr. Dobb's Journal"}
+@string {IPL = "Information Processing Letters"}
+@string {IEEETransComp = "{IEEE} Transactions on Computers"}
+@string {IEEETransSWE = "{IEEE} Transactions on Software Engineering"}
+@string {ISJ = "{IBM} Systems Journal"}
+@string {JACM = "Journal of the ACM"}
+@string {JFP = "Journal of Functional Programming"}
+@string {JSS = "Journal of Systems and Software"}
+@string {LNCS = "Lecture Notes in Computer Science"}
+@string {LSC = "Lisp and Symbolic Computation"}
+@string {SPE = "Software Practice and Experience"}
+@string {SIGPLAN = "{{ACM} SIGPLAN} Notices"}
+@string {TOPLAS = "{ACM} Transactions on Programming Languages and Systems"}
+@string {TransCompSys = "{ACM} Transactions on Computer Systems"}
+@string {TransSWE = "{ACM} Transactions on Software Engineering"}
+
+% PUBLISHER + ADDRESS ABBREVIATIONS
+
+@string {ACM = "{ACM} Press"}
+@string {AP = "Academic Press"}
+@string {AW = "Addison-Wesley"}
+@string {BCS = "British Computer Society"}
+@string {CUP = "Cambridge University Press"}
+@string {ENH = "Elsevier-North Holland"}
+@string {ES = "Elsevier Science Publishers"}
+@string {IBM = "IBM Corp."}
+@string {IEEE = "IEEE Press"}
+@string {PH = "Prentice-Hall"}
+@string {MGH = "McGraw-Hill"}
+@string {NH = "North Holland"}
+@string {MIT = "MIT Press"}
+@string {SV = "Springer-Verlag"}
+@string {UA = "USENIX Association"}
+@string {Wiley = "Wiley"}
+@string {MK = "Morgan Kaufman"}
+
+% INSTITUTION ABBREVIATIONS
+
+@string {CMU = "Carnegie Mellon University"}
+@string {CORNELL = "Cornell University"}
+@string {DECSRC = "DEC Systems Research Center, Palo Alto, CA"}
+@string {DECWRL = "DEC Western Research Laboratory, Palo Alto, CA"}
+@string {DIKU = "Department of Computer Science (DIKU), University of Copenhagen"}
+@string {INRIA = "Institut National de la Recherche en Informatique et Automatique"}
+@string {Lund = "Lund University, Sweden"}
+@string {MITAI = "MIT AI Laboratory"}
+@string {MITLCS = "MIT Laboratory for Computer Science"}
+@string {PARC = "Xerox PARC, Palo Alto, CA"}
+@string {PRINCETON = "Department of Computer Science, Princeton University"}
+@string {ANU = "Deptartment of Computer Science, Austrailian National University"}
+@string {RICE = "Rice University"}
+@string {UCB = "University of California, Berkeley"}
+@string {UKC = "Computing Laboratory, The University of Kent at Canterbury"}
+@string {UCSC = "University of California, Santa Cruz"}
+
+% ----------------------------------------------------------------------
+
+@inproceedings{guyer97,
+  title       = "A Method of Automatically Optimizing {MPI} Programs",
+  Author      = "Samuel Z. Guyer and Calvin Lin",
+  year        = "1997",
+  booktitle   = "{\em submitted to} the International Parallel Processing 
+  	         Symposium",
+  month       = Sep}
+
+@inproceedings{guyer99,
+  title       = "An Annotation Language for Optimizing Software Libraries",
+  Author      = "Samuel Z. Guyer and Calvin Lin",
+  booktitle   = DSL,
+  month       = Oct,
+  pages       = "39--52",
+  year        = "1999"}
+
+@inproceedings{guyer00,
+  title       = "Optimizing the Use of High Performance Software Libraries",
+  Author      = "Samuel Z. Guyer and Calvin Lin",
+  booktitle   = LCPC,
+  month       = "August",
+  year        = "2000",
+  pages       = "221--238"}
+
+@inbook{guyer00a,
+  title       = "Broadway: A Software Architecture for Scientific Computing",
+  Author      = "Samuel Z. Guyer and Calvin Lin",
+  booktitle   = "The Architecture of Scientific Software",
+  editors     = "R.F. Boisvert and P.T.P. Tang",
+  publisher   = "Kluwer Academic Press",
+  month       = "October",
+  year        = "2000",
+  pages       = "175--192" }
+
+@inproceedings{guyer01,
+  title       = "Customizing Software Libraries for Performance Portability",
+  Author      = "Samuel Z. Guyer and Emery Berger and Calvin Lin",
+  booktitle   = "10$^{th}$ SIAM Conference on Parallel Processing for
+                 Scientific Computing",
+  month       = "March",
+  year        = "2001" }
+
+@techreport{guyer02,
+ author      = "Samuel Z. Guyer and Emery Berger and Calvin Lin",
+ title       = "Detecting Errors with Configurable Whole-program Dataflow
+	        Analysis",
+ number      = "TR 02-04",
+ institution = "Dept. of Computer Sciences, 
+	        University of Texas at Austin",
+ month       = "February",
+ year        = 2002}
+
+@inproceedings{guyer03,
+  title       = "Client-Driven Pointer Analysis",
+  author      = "Samuel Z. Guyer and Calvin Lin",
+  booktitle   = SAS,
+  month       = "June",
+  year        = "2003",
+}
+
+@phdthesis{ guyer03thesis,
+  author = "Samuel Z. Guyer",
+  title = "Incorporating domain-specific information into the
+           compilation process",
+  year = "2003",
+  school = "The University of Texas at Austin"
+}
+
+@article{Guyer05,
+  title = "Broadway: A Compiler for Exploiting the Domain-Specific Semantics
+           of Software Libraries",
+  author = "Samuel Z. Guyer and Calvin Lin",
+  journal = "Proceedings of the {IEEE}, Special issue on program generation, optimization, and adaptation",
+  volume = "93",
+  number = "2",
+  year = "2005",
+  pages = {342--357}
+}
+
+@article{guyer05error,
+  author = "Samuel Z. Guyer and Calvin Lin",
+  title = "Error Checking with Client-Driven Pointer Analysis",
+  journal = "Science of Computer Programming,
+             Special Issue on the Static Analysis Symposium 2003",
+  year = "2005",
+  month = "October",
+  volume = "58",
+  number = "1--2",
+  pages = "83--114"}
+}
+
+@inproceedings{guyer04cronies,
+ author = {Samuel Z. Guyer and Kathryn S. McKinley},
+ title = {Finding your cronies: static analysis for dynamic object colocation},
+ booktitle = OOPSLA,
+ year = {2004},
+ pages = {237--250},
+ location = {Vancouver, BC, Canada},
+}
+
+@inproceedings{guyer06freeme,
+ author = {Samuel Z. Guyer and Kathryn S. McKinley and Daniel Frampton},
+ title = {Free-Me: a static analysis for automatic individual object reclamation},
+ booktitle = PLDI,
+ year = {2006},
+ pages = {364--375},
+ location = {Ottawa, Ontario, Canada},
+}
+
+@inproceedings{blackburn06dacapo,
+ author = {Stephen M. Blackburn and Robin Garner and Chris Hoffmann and Asjad M. Khang and Kathryn S. McKinley and Rotem Bentzur and Amer Diwan and Daniel Feinberg and Daniel Frampton and Samuel Z. Guyer and Martin Hirzel and Antony Hosking and Maria Jump and Han Lee and J. Eliot and B. Moss and Aashish Phansalkar and Darko Stefanovi\'{c} and Thomas VanDrunen and Daniel von Dincklage and Ben Wiedermann},
+ title = {The {DaCapo} benchmarks: {Java} benchmarking development and analysis},
+ booktitle = OOPSLA,
+ year = {2006},
+ pages = {169--190},
+ location = {Portland, OR},
+}
+
+@inproceedings{bond07origin,
+ author = {Michael D. Bond and Nicholas Nethercote and Stephen W. Kent and Samuel Z. Guyer and Kathryn S. McKinley},
+ title = {Tracking bad apples: reporting the origin of null and undefined value errors},
+ booktitle = OOPSLA,
+ year = {2007},
+ pages = {405--422},
+ location = {Montreal, Quebec, Canada},
+}
+
+@inproceedings{aftandilian08gcassertions,
+ author = {Edward Aftandilian and Samuel Z. Guyer},
+ title = {GC assertions: using the garbage collector to check heap properties},
+ booktitle = MSPC,
+ year = {2008},
+ pages = {36--40},
+ location = {Seattle, WA},
+}
+
+@inproceedings{aftandilian09gcassertions,
+ author = {Edward Aftandilian and Samuel Z. Guyer},
+ title = {{GC} Assertions: Using the Garbage Collector to Check Heap Properties},
+ booktitle = PLDI,
+ year = {2009},
+ location = {Dublin, Ireland},
+}
+
+@inproceedings{reichenbach10deal,
+ author = {Reichenbach, Christoph and and Immerman, Neil and Smaragdakis, Yannis and Aftandilian, Edward E. and Guyer, Samuel Z.},
+ title = {What Can the {GC} Compute Efficiently? {A} Language for Heap Assertions at {GC} Time},
+ booktitle = OOPSLA,
+ year = {2010},
+ }
+
+
+
+% ----------------------------------------------------------------------
+% Memory safety
+
+@inproceedings{berger06diehard,
+ author = {Berger, Emery D. and Zorn, Benjamin G.},
+ title = {DieHard: probabilistic memory safety for unsafe languages},
+ booktitle = PLDI,
+ year = {2006},
+ pages = {158--168},
+ location = {Ottawa, Ontario, Canada}
+}
+
+@inproceedings{lvin08archipelago,
+ author = {Lvin, Vitaliy B. and Novark, Gene and Berger, Emery D. and Zorn, Benjamin G.},
+ title = {Archipelago: trading address space for reliability and security},
+ booktitle = ASPLOS,
+ year = {2008},
+ pages = {115--124},
+ location = {Seattle, WA, USA}
+}
+
+@inproceedings{devietti08hardbound,
+ author = {Devietti, Joe and Blundell, Colin and Martin, Milo M. K. and Zdancewic, Steve},
+ title = {Hardbound: architectural support for spatial safety of the C programming language},
+ booktitle = ASPLOS,
+ year = {2008},
+ pages = {103--114},
+ location = {Seattle, WA}
+}
+
+@inproceedings{hackett06checking,
+ author = {Hackett, Brian and Das, Manuvir and Wang, Daniel and Yang, Zhe},
+ title = {Modular checking for buffer overflows in the large},
+ booktitle = ICSE,
+ year = {2006},
+ pages = {232--241},
+ location = {Shanghai, China}
+}
+
+@inproceedings{condit03ccured,
+ author = {Condit, Jeremy and Harren, Matthew and McPeak, Scott and Necula, George C. and Weimer, Westley},
+ title = {CCured in the real world},
+ booktitle = PLDI,
+ year = {2003},
+ pages = {232--244},
+ location = {San Diego, CA}
+}
+
+@inproceedings{jim02cyclone,
+ author = {Jim, Trevor and Morrisett, J. Greg and Grossman, Dan and Hicks, Michael W. and Cheney, James and Wang, Yanling},
+ title = {Cyclone: A Safe Dialect of C},
+ booktitle = {ATEC '02: Proceedings of the General Track of the annual conference on USENIX Annual Technical Conference},
+ year = {2002},
+ pages = {275--288},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA},
+}
+
+@inproceedings{dor03cssv,
+ author = {Dor, Nurit and Rodeh, Michael and Sagiv, Mooly},
+ title = {CSSV: towards a realistic tool for statically detecting all buffer overflows in C},
+ booktitle = PLDI,
+ year = {2003},
+ pages = {155--167},
+ location = {San Diego, CA}
+}
+
+@article{nebenzahl06vaccinate,
+ author = {Nebenzahl, Danny and Sagiv, Mooly and Wool, Avishai},
+ title = {Install-Time Vaccination of Windows Executables to Defend against Stack Smashing Attacks},
+ journal = {IEEE Trans. Dependable Secur. Comput.},
+ volume = {3},
+ number = {1},
+ year = {2006},
+}
+
+@article{ozdoganoglu06smashguard,
+ author = {Ozdoganoglu, Hilmi and Vijaykumar, T. N. and Brodley, Carla E. and Kuperman, Benjamin A. and Jalote, Ankit},
+ title = {SmashGuard: A Hardware Solution to Prevent Security Attacks on the Function Return Address},
+ journal = {IEEE Transactions on Computers},
+ volume = {55},
+ number = {10},
+ year = {2006},
+ pages = {1271--1285},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC},
+}
+
+% ----------------------------------------------------------------------
+% Dynamic analysis
+
+@inproceedings{nethercote07valgrind,
+ author = {Nethercote, Nicholas and Seward, Julian},
+ title = {How to shadow every byte of memory used by a program},
+ booktitle = VEE,
+ year = {2007},
+ pages = {65--74},
+ location = {San Diego, CA},
+}
+
+@inProceedings{shaham01heapprofiling,
+  author = {R. Shaham and E. K. Kolodner and M. Sagiv},
+  title = {Heap Profiling for Space-Efficient {Java}},
+  booktitle = PLDI,
+  location = {Snowbird, UT},
+  year = {2001},
+  pages = {104--133}  
+}
+
+@article{ernst07diakon,
+  author = {Michael D. Ernst and Jeff H. Perkins and Philip J. Guo and Stephen McCamant and Carlos Pacheco and Matthew S. Tschantz and Chen Xiao},
+  title = {The {Daikon} system for dynamic detection of likely invariants},
+  journal = {Science of Computer Programming},
+  year = {2007}
+}
+
+@article{paz07cycledetection,
+ author = {Harel Paz and David F. Bacon and Elliot K. Kolodner and Erez Petrank and V. T. Rajan},
+ title = {An efficient on-the-fly cycle collection},
+ journal = {ACM TOPLAS},
+ volume = {29},
+ number = {4},
+ year = {2007},
+ pages = {20},
+}
+
+@inproceedings{arnold08qvm,
+ author = {Matthew Arnold and Martin Vechev and Eran Yahav},
+ title = {{QVM}: an efficient runtime for detecting defects in deployed systems},
+ booktitle = OOPSLA,
+ year = {2008},
+ pages = {143--162},
+ location = {Nashville, TN, USA},
+}
+
+@inproceedings{shankar07ditto,
+ author = {Ajeet Shankar and Rastislav Bod\'{\i}k},
+ title = {DITTO: automatic incrementalization of data structure invariant checks (in Java)},
+ booktitle = PLDI,
+ year = {2007},
+ pages = {310--319},
+ location = {San Diego, California, USA},
+}
+
+@misc{ specsharp,
+  author = {Mike Barnett and K. Rustan and M. Leino and Wolfram Schulte},
+  title = {The Spec\# programming system: An overview},
+  note = {http://\-research.\-microsoft.\-com/\-users/\-leino/\-papers/\-krml136.pdf},
+}
+
+@inproceedings{cheon02jmlc,
+  author = {Yoonsik Cheon and Gary T. Leavens},
+  title = {A runtime assertion checker for the Java Modeling Language (JML)},
+  booktitle = {SERP 02: Internation Conference on Software Engineering Research and Practice},
+  year = {2002},
+  location = {Las Vegas, NV},
+  pages = {322-328}
+}
+
+@inproceedings{gorbovitski08invariant,
+ author = {Michael Gorbovitski and Tom Rothamel and Yanhong A. Liu and Scott D. Stoller},
+ title = {Efficient runtime invariant checking: a framework and case study},
+ booktitle = {WODA '08: Proceedings of the 2008 international workshop on dynamic analysis},
+ year = {2008},
+ isbn = {978-1-60558-054-8},
+ pages = {43--49},
+ location = {Seattle, Washington},
+}
+
+@misc{ jvmti,
+  author = {{Sun Microsystems}},
+  title = {{JVM} Tool Interface},
+  note = {\url{http://java.sun.com/javase/6/docs/platform/jvmti/jvmti.html}, Retrieved April 30, 2010},
+  key = {JVM Tool Interface},
+  year = {2010},
+}
+
+@misc{ hprof,
+  author = {Kelly O'Hair},
+  title = {{HPROF}: A Heap/{CPU} Profiling Tool in {J2SE} 5.0},
+  note = {\url{http://java.sun.com/developer/technicalArticles/Programming/HPROF.html}, Retrieved April 30, 2010},
+  year = {2004},
+}
+
+@misc{ graphml,
+  author = {{Graph Drawing Steering Committee}},
+  title = {The {GraphML} File Format},
+  note = {\url{http://graphml.graphdrawing.org}, Retrieved April 30, 2010},
+  key = {The GraphML File Format},
+  year = {2010},
+}
+
+@inproceedings{oneill06simplifiers,
+ author = {Melissa E. O'Neill and F. Warren Burton},
+ title = {Smarter garbage collection with simplifiers},
+ booktitle = MSPC,
+ year = {2006},
+ pages = {19--30},
+ location = {San Jose, CA},
+}
+
+@InProceedings{dieckmann99spec,
+ author = {S. Dieckmann and U. H\"{o}lzle},
+ title = "{A Study of the Allocation Behavior of the {SPECjvm98 Java} Benchmarks}",
+ booktitle = ECOOP,
+ xmonth = Jun,
+ pages = {92--115},
+ year = 1999
+}
+
+@inproceedings{jones08demographics,
+ author = {Richard E. Jones and Chris Ryder},
+ title = {A study of Java object demographics},
+ booktitle = ISMM,
+ year = {2008},
+ pages = {121--130},
+ location = {Tucson, AZ},
+}
+
+@techreport{novark06cola,
+  author = "Gene Novark and Trevor Strohman and Emery D. Berger",
+  title = "Custom Object Layout for Garbage-Collected Languages",
+  year = "2006",
+  institution = "UMass Amherst",
+  number = "UM-CS-2006-06"
+}
+
+@InProceedings{jump04sampling,
+  author = 	 {M. Jump and S. M. Blackburn and K. S. McKinley},
+  title = 	 {Dynamic Allocation Sampling for Object Lifetime Classification},
+  booktitle = ISMM,
+  Address =   {Vancouver, BC},
+  year = 2004,
+  pages = {152--162},
+}
+
+@inproceedings{milicevic07korat,
+ author = {Aleksandar Milicevic and Sasa Misailovic and Darko Marinov and Sarfraz Khurshid},
+ title = {Korat: A Tool for Generating Structurally Complex Test Inputs},
+ booktitle = ICSE,
+ year = {2007},
+ pages = {771--774},
+ address = {Washington, DC},
+}
+
+@inproceedings{elkarablieh07starc,
+ author = {Bassem Elkarablieh and Sarfraz Khurshid and Duy Vu and Kathryn S. McKinley},
+ title = {{STARC}: Static Analysis for Efficient Repair of Complex Data},
+ booktitle = OOPSLA,
+ year = {2007},
+ pages = {387--404},
+ location = {Montreal, Quebec, Canada},
+}
+
+@inproceedings{elkarablieh08juzi,
+ author = {Elkarablieh, Bassem and Khurshid, Sarfraz},
+ title = {Juzi: a tool for repairing complex data structures},
+ booktitle = ICSE,
+ year = {2008},
+ pages = {855--858},
+ location = {Leipzig, Germany}
+}
+
+@inproceedings{chilimbi06heapmd,
+ author = {Trishul M. Chilimbi and Vinod Ganapathy},
+ title = {{HeapMD}: identifying heap-based bugs using anomaly detection},
+ booktitle = ASPLOS,
+ year = {2006},
+ pages = {219--228},
+ location = {San Jose, CA},
+}
+
+@article{mitchell07bloat,
+ author = {Nick Mitchell and Gary Sevitsky},
+ title = {The causes of bloat, the limits of health},
+ booktitle = OOPSLA,
+ year = {2007},
+ pages = {245--260},
+ location = {Montreal, Quebec, Canada},
+}
+
+@inproceedings{demsky06,
+ author = {Brian Demsky and Michael D. Ernst and Philip J. Guo and Stephen McCamant and Jeff H. Perkins and Martin Rinard},
+ title = {Inference and enforcement of data structure consistency specifications},
+ booktitle = ISSTA,
+ year = {2006},
+ pages = {233--244},
+ location = {Portland, ME},
+}
+
+@inproceedings{pluquet09past,
+ author = {Pluquet, Fr\'{e}d\'{e}ric and Langerman, Stefan and Wuyts, Roel},
+ title = {Executing code in the past: efficient in-memory object graph versioning},
+ booktitle = OOPSLA,
+ year = {2009},
+ isbn = {978-1-60558-768-4},
+ pages = {771--772},
+ location = {Orlando, FL}
+}
+
+@inproceedings{shaham01profiling,
+ author = {Shaham, Ran and Kolodner, Elliot K. and Sagiv, Mooly},
+ title = {Heap profiling for space-efficient Java},
+ booktitle = PLDI,
+ year = {2001},
+ pages = {104--113},
+ location = {Snowbird, UT}
+}
+
+@misc{ eclipsemat,
+  author = {{Eclipse Foundation}},
+  title = {Eclipse Memory Analyzer},
+  note = {\url{http://www.eclipse.org/mat}, Retrieved April 30, 2010},
+  key = {Eclipse Memory Analyzer},
+  year = {2010} }
+
+
+% ----------------------------------------------------------------------
+% Static analysis
+
+@article{ramalingam94undecidable,
+ author = {Ramalingam, G.},
+ title = {The undecidability of aliasing},
+ journal = TOPLAS,
+ volume = {16},
+ number = {5},
+ year = {1994},
+ pages = {1467--1471},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@article{reps98cfl,
+    author = {Thomas Reps Computer and Thomas Reps},
+    title = {Program Analysis via Graph Reachability},
+    journal = {Information and Software Technology},
+    year = {1998},
+    volume = {40},
+    pages = {5--19}
+}
+
+@InProceedings{moller2001pale,
+  author =       {Anders M\o{}ller and Michael I. Schwartzbach},
+  title =        {The Pointer Assertion Logic Engine},
+  booktitle =    PLDI,
+  year =         {2001},
+  pages =   {221--231},
+  location = {Snowbird, UT}
+}
+
+@inproceedings{mcpeak05,
+  author = "Scott McPeak and George Necula",
+  title = "Data structure specifications via local equality axioms",
+  booktitle = CAV,
+  year = {2005},
+  pages = {476--490},
+}
+
+@inproceedings{darga06checking,
+ author = {Paul T. Darga and Chandrasekhar Boyapati},
+ title = {Efficient software model checking of data structure properties},
+ booktitle = OOPSLA,
+ year = {2006},
+ pages = {363--382},
+ location = {Portland, OR},
+}
+
+
+@inproceedings{fradet97shape,
+ author = {Pascal Fradet and Daniel Le M\'{e}tayer},
+ title = {Shape types},
+ booktitle = POPL,
+ year = {1997},
+ pages = {27--39},
+ location = {Paris, France},
+}
+
+@inproceedings{zee08verification,
+ author = {Karen Zee and Viktor Kuncak and Martin Rinard},
+ title = {Full functional verification of linked data structures},
+ booktitle = PLDI,
+ year = {2008},
+ pages = {349--361},
+ location = {Tucson, AZ},
+}
+
+@inproceedings{ghiya96shape,
+  author = {Rakesh Ghiya and Laurie J. Hendren},
+  title = {Is it a tree, a {DAG}, or a cyclic graph? {A} shape analysis for heap-directed pointers in {C}},
+  booktitle = POPL,
+  year = {1996},
+  pages = {1--15},
+  location = {St. Petersburg, FL},
+}
+
+@inproceedings{hackett05shape,
+ author = {Brian Hackett and Radu Rugina},
+ title = {Region-based shape analysis with tracked locations},
+ booktitle = POPL,
+ year = {2005},
+ pages = {310--323},
+ location = {Long Beach, CA},
+}
+
+@inproceedings{chase90pointers,
+  author = {David R. Chase and Mark Wegman and F. Kenneth Zadeck},
+  title = {Analysis of pointers and structures},
+  booktitle = PLDI,
+  year = {1990},
+  pages = {296--310},
+  location = {White Plains, NY},
+}
+
+@inproceedings{sagiv99shape,
+ author = {Mooly Sagiv and Thomas Reps and Reinhard Wilhelm},
+ title = {Parametric shape analysis via 3-valued logic},
+ booktitle = POPL,
+ year = {1999},
+ pages = {105--118},
+ location = {San Antonio, TX},
+}
+
+@Article{Blanchet:03,
+  author = {B. Blanchet},
+  title = {Escape Analysis for {Java}: {Theory} and Practice},
+  journal = TOPLAS,
+  volume = 25,
+  number = 6,
+  pages = {713--775},
+  month = Nov,
+  year = 2003
+}
+
+@inproceedings{landi93alias,
+    author = {William Landi and Barbara G. Ryder and Sean Zhang},
+    title = {Interprocedural modification side effect analysis with pointer aliasing},
+    booktitle = PLDI,
+    year = {1993},
+    pages = {56--67},
+}
+
+@inproceedings{berndl03bdds,
+ author = {Marc Berndl and Ondrej Lhot\'{a}k and Feng Qian and Laurie Hendren and Navindra Umanee},
+ title = {Points-to analysis using {BDD}s},
+ booktitle = PLDI,
+ year = {2003},
+ pages = {103--114},
+ location = {San Diego, CA},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+
+@inproceedings{nimmer02invariant,
+ author = {Jeremy W. Nimmer and Michael D. Ernst},
+ title = {Invariant inference for static checking},
+ booktitle = FSE,
+ year = {2002},
+ pages = {11--20},
+ location = {Charleston, SC},
+}
+
+@inproceedings{cherem07unique,
+ author = {Sigmund Cherem and Radu Rugina},
+ title = {Uniqueness inference for compile-time object deallocation},
+ booktitle = ISMM,
+ year = {2007},
+ pages = {117--128},
+ location = {Montreal, Quebec, Canada},
+}
+
+@inproceedings{cherem06dealloc,
+ author = {Sigmund Cherem and Radu Rugina},
+ title = {Compile-time deallocation of individual objects},
+ booktitle = ISMM,
+ year = {2006},
+ pages = {138--149},
+ location = {Ottawa, Ontario, Canada},
+}
+
+@inproceedings{flanagan02escjava,
+ author = {Cormac Flanagan and K. Rustan M. Leino and Mark Lillibridge and Greg Nelson and James B. Saxe and Raymie Stata},
+ title = {Extended static checking for {Java}},
+ booktitle = PLDI,
+ year = {2002},
+ pages = {234--245},
+ location = {Berlin, Germany},
+}
+
+@inproceedings{aldrich02alias,
+ author = {Jonathan Aldrich and Valentin Kostadinov and Craig Chambers},
+ title = {Alias annotations for program understanding},
+ booktitle = OOPSLA,
+ year = {2002},
+ pages = {311--330},
+ location = {Seattle, WA},
+}
+
+@inproceedings{hirzel02connectivity,
+ author = {Martin Hirzel and Johannes Henkel and Amer Diwan and Michael Hind},
+ title = {Understanding the connectivity of heap objects},
+ booktitle = ISMM,
+ year = {2002},
+ pages = {36--49},
+ location = {Berlin, Germany},
+}
+
+@article{hirzel07pointers,
+ author = {Martin Hirzel and Daniel Von Dincklage and Amer Diwan and Michael Hind},
+ title = {Fast online pointer analysis},
+ journal = TOPLAS,
+ volume = {29},
+ number = {2},
+ year = {2007},
+}
+
+@inproceedings{dufour07blended,
+ author = {Bruno Dufour and Barbara G. Ryder and Gary Sevitsky},
+ title = {Blended analysis for performance understanding of framework-based applications},
+ booktitle = {ISSTA '07: Proceedings of the 2007 international symposium on Software testing and analysis},
+ year = {2007},
+ pages = {118--128},
+ location = {London, UK},
+}
+
+@inproceedings{sevitsky01jinsight,
+ author = {Sevitsky, Gary and De Pauw, Wim and Konuru, Ravi},
+ title = {An Information Exploration Tool for Performance Analysis of Java Programs},
+ booktitle = {TOOLS '01: Proceedings of the Technology of Object-Oriented Languages and Systems},
+ year = {2001},
+ pages = {85},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC},
+ }
+
+@inproceedings{reimer04validating,
+ author = {Reimer, Darrell and Schonberg, Edith and Srinivas, Kavitha and Srinivasan, Harini and Dolby, Julian and Kershenbaum, Aaron and Koved, Larry},
+ title = {Validating structural properties of nested objects},
+ booktitle = OOPSLA,
+ year = {2004},
+ pages = {294--304},
+ location = {Vancouver, BC},
+}
+
+@inproceedings{liu04paths,
+ author = {Liu, Yanhong A. and Rothamel, Tom and Yu, Fuxiang and Stoller, Scott D. and Hu, Nanjun},
+ title = {Parametric regular path queries},
+ booktitle = PLDI,
+ year = {2004},
+ pages = {219--230},
+ location = {Washington, DC}
+}
+
+% ----------------------------------------------------------------------
+% Leak detection
+
+@inproceedings{Bond08melt,
+ author = {Michael D. Bond and Kathryn S. McKinley},
+ title = {Tolerating memory leaks},
+ booktitle = OOPSLA,
+ year = {2008},
+ isbn = {978-1-60558-215-3},
+ pages = {109--126},
+ location = {Nashville, TN, USA},
+}
+
+@inproceedings{bond06bell,
+ author = {Michael D. Bond and Kathryn S. McKinley},
+ title = {Bell: bit-encoding online memory leak detection},
+ booktitle = ASPLOS,
+ year = {2006},
+ pages = {61--72},
+ location = {San Jose, CA},
+}
+
+@inproceedings{jump07cork,
+ author = {Maria Jump and Kathryn S. McKinley},
+ title = {Cork: dynamic memory leak detection for garbage-collected languages},
+ booktitle = POPL,
+ year = {2007},
+ pages = {31--38},
+ location = {Nice, France},
+}
+
+@inproceedings{ chilimbi04swat,
+ author = {Trishul M. Chilimbi and Matthias Hauswirth},
+ title = "{Low-Overhead Memory Leak Detection Using Adaptive 
+           Statistical Profiling}",
+ booktitle = ASPLOS,
+ year = {2004},
+ pages = {156--164},
+ location = {Boston, MA},
+}
+
+@inproceedings{ mitchell03leakbot,
+  title = "{LeakBot: An Automated and Lightweight Tool for Diagnosing 
+            Memory Leaks in Large Java Applications}",
+  author = {Nick Mitchell and Gary Sevitsky},
+  booktitle = ECOOP,
+  pages = {351-377},
+  year = 2003,
+}
+
+@inproceedings{xu08leaks,
+ author = {Guoqing Xu and Atanas Rountev},
+ title = {Precise memory leak detection for java software using container profiling},
+ booktitle = ICSE,
+ year = {2008},
+ pages = {151--160},
+ location = {Leipzig, Germany},
+}
+
+
+% ----------------------------------------------------------------------
+% Ownership
+
+@article{ownershiptypes98,
+ author = {David G. Clarke and John M. Potter and James Noble},
+ title = {Ownership types for flexible alias protection},
+ journal = {SIGPLAN Notices},
+ volume = {33},
+ number = {10},
+ year = {1998},
+ issn = {0362-1340},
+ pages = {48--64},
+ }
+
+@inproceedings{sharedownership07,
+ author = {Nicholas R. Cameron and Sophia Drossopoulou and James Noble and Matthew J. Smith},
+ title = {Multiple ownership},
+ booktitle = OOPSLA,
+ year = {2007},
+ pages = {441--460},
+ location = {Montreal, Quebec, Canada},
+}
+
+@inproceedings{potanin06ownership,
+ author = {Alex Potanin and James Noble and Dave Clarke and Robert Biddle},
+ title = {Generic ownership for generic Java},
+ booktitle = OOPSLA,
+ year = {2006},
+ isbn = {1-59593-348-4},
+ pages = {311--324},
+ location = {Portland, OR},
+}
+
+@inproceedings{boyapati03ownership,
+ author = {Chandrasekhar Boyapati and Barbara Liskov and Liuba Shrira},
+ title = {Ownership types for object encapsulation},
+ booktitle = POPL,
+ year = {2003},
+ isbn = {1-58113-628-5},
+ pages = {213--223},
+ location = {New Orleans, LA},
+}
+
+@inproceedings{mitchell06ownership,
+  author = {Nick Mitchell},
+  title = {The Runtime Structure of Object Ownership},
+  booktitle = ECOOP,
+  year = {2006},
+  pages = {74--98},
+  location = {Nantes, France},
+}
+
+% ----------------------------------------------------------------------
+% Infrastructure
+
+@Misc{JikesRVMWeb, 
+        Author = {{Jikes RVM}},
+        Title = {{IBM}},
+        Year = 2005, 
+        note = {http://\-jikesrvm.\-sourceforge.\-net}
+}
+
+@inproceedings{ blackburn04oil,
+ author = {Stephen M. Blackburn and Perry Cheng and Kathryn S. McKinley},
+ title = "{Oil and Water? High Performance Garbage Collection in Java 
+with MMTk}",
+ booktitle = ICSE,
+ year = {2004},
+ pages = {137--146},
+}
+
+@Manual{ specjbb2000,
+  title = {{SPEC}jbb2000 Documentation},
+  titleX = {{SPEC}jbb2000 ({Java Business Benchmark}) Documentation},
+  edition = {Release 1.01},
+  year = {2001},
+  organization = {{Standard Performance Evaluation Corporation}}
+}
+
+@Manual{ specjbb2005,
+  title = {{SPEC}jbb2005 Documentation},
+  titleX = {{SPEC}jbb2005 ({Java Business Benchmark}) Documentation},
+  edition = {Release 1.04},
+  year = {2005},
+  organization = {{Standard Performance Evaluation Corporation}}
+}
+
+@Manual{ specjvm98,
+  title = "{{SPEC}jvm98 Documentation}",
+  edition = {Release 1.03},
+  year = {1999},
+  organization = {Standard Performance Evaluation Corporation}
+}
+
+@misc{ jprobe,
+  author = {Quest},
+  title = {{JProbe Memory Debugger}},
+  note = {\url{http://www.quest.com/jprobe/}, Retrieved July 22, 2010},
+}
+
+@misc{ jrockitmissioncontrol,
+  author = {{BEA}},
+  title = {{JRockit Mission Control}},
+  note = {http://\-dev2dev.\-bea.\-com/\-jrockit/\-tools.html},
+}
+
+@misc{ leaktracer,
+  author = {{Erwin Andreasen and Henner Zeller}},
+  title = "{LeakTracer}",
+  note = {http://\-www.\-andreasen.\-org/\-LeakTracer/},
+  Xyear = 2003,
+}
+
+@misc{ netmemoryprofiler,
+  author = {{SciTech Software}},
+  title = "{.NET Memory Profiler}",
+  note = {http://\-www.\-scitech.\-se/\-memprofiler/},
+}
+
+
+% ----------------------------------------------------------------------
+% Complexity
+
+@inproceedings{immerman83,
+ author = {Neil Immerman},
+ title = {Languages which capture complexity classes},
+ booktitle = {Proceedings of the ACM symposium on Theory of computing},
+ year = {1983},
+ pages = {347--354},
+}
+
+@inproceedings{levami05,
+  author = {Tal Lev-Ami and Neil Immerman and Tom Reps and Mooly Sagiv and Siddharth Srivastava and Greta Yorsh},
+  title = {Simulating Reachability using First-Order Logic with Applications to Verification Of Linked Data Structures},
+  booktitle = {International Conference on Automated Deduction},
+  year = {2005},
+  pages = {99 - 115},
+}
+
+% ----------------------------------------------------------------------
+% Garbage collection
+
+@inproceedings{cher04prefetch,
+ author = {Chen-Yong Cher and Antony L. Hosking and T. N. Vijaykumar},
+ title = {Software prefetching for mark-sweep garbage collection: hardware analysis and software redesign},
+ booktitle = ASPLOS,
+ year = {2004},
+ pages = {199--210},
+ location = {Boston, MA},
+}
+
+@inproceedings{hertz05paging,
+ author = {Matthew Hertz and Yi Feng and Emery D. Berger},
+ title = {Garbage collection without paging},
+ booktitle = PLDI,
+ year = {2005},
+ pages = {143--153},
+ location = {Chicago, IL},
+}
+
+@article{ungar84generational,
+ author = {David Ungar},
+ title = {Generation Scavenging: A non-disruptive high performance storage reclamation algorithm},
+ journal = {ACM SIGPLAN Notices},
+ volume = {19},
+ number = {5},
+ year = {1984},
+ pages = {157--167},
+}
+
+@inproceedings{blackburn03ulterior,
+ author = {Stephen M. Blackburn and Kathryn S. McKinley},
+ title = {Ulterior reference counting: fast garbage collection without a long wait},
+ booktitle = OOPSLA,
+ year = {2003},
+ pages = {344--358},
+ location = {Anaheim, CA},
+}
+
+@inproceedings{kermany06compressor,
+ author = {Haim Kermany and Erez Petrank},
+ title = {The Compressor: concurrent, incremental, and parallel compaction},
+ booktitle = PLDI,
+ year = {2006},
+ pages = {354--363},
+ location = {Ottawa, Ontario, Canada},
+}
+
+@inproceedings{bacon03metronome,
+ author = {David F. Bacon and Perry Cheng and V. T. Rajan},
+ title = {A real-time garbage collector with low overhead and consistent utilization},
+ booktitle = POPL,
+ year = {2003},
+ pages = {285--298},
+ location = {New Orleans, LA},
+}
+
+% ----------------------------------------------------------------------
+% Concurrent checking
+
+@inproceedings{rosenblum86anna,
+ author = {Rosenblum, D S and Sankar, S and Luckham, D C},
+ title = {Concurrent runtime checking of annotated Ada programs},
+ booktitle = {Proc. of the sixth conference on Foundations of software technology and theoretical computer science},
+ year = {1986},
+ pages = {10--35},
+ location = {New Delhi, India}
+}
+
+% Mahmood, A. and McCluskey, E. J. Concurrent Error Detection Using Watchdog Processors---A Survey, Computer Systems Laboratory, Stanford University, 1985.
+
+@inproceedings{aral88parasight,
+ author = {Aral, Ziya and Gertner, Ilya},
+ title = {Non-intrusive and interactive profiling in parasight},
+ booktitle = {Principles and Practice of Parallel Programming},
+ year = {1988},
+ pages = {21--30},
+ location = {New Haven, CT}
+}
+
+@article{patil97checking,
+ author = {Patil, Harish and Fischer, Charles},
+ title = {Low-cost, concurrent checking of pointer and array accesses in C programs},
+ journal = SPE,
+ volume = {27},
+ number = {1},
+ year = {1997},
+ pages = {87--110}
+}
+
+@inproceedings{oplinger02speculative,
+ author = {Oplinger, Jeffrey and Lam, Monica S.},
+ title = {Enhancing software reliability with speculative threads},
+ booktitle = ASPLOS,
+ year = {2002},
+ pages = {184--196},
+ location = {San Jose, CA}
+}
+
+@inproceedings{wallace07superpin,
+ author = {Wallace, Steven and Hazelwood, Kim},
+ title = {SuperPin: Parallelizing Dynamic Instrumentation for Real-Time Performance},
+ booktitle = CGO,
+ year = {2007},
+ pages = {209--220},
+ location = {}
+}
+
+@inproceedings{ha09concurrent,
+ author = {Ha, Jungwoo and Arnold, Matthew and Blackburn, Stephen M. and McKinley, Kathryn S.},
+ title = {A concurrent dynamic analysis framework for multicore hardware},
+ booktitle = OOPSLA,
+ year = {2009},
+ pages = {155--174},
+ location = {Orlando, FL}
+}
+@article{shetty06heapmon,
+ author = {Shetty, R. and Kharbutli, M. and Solihin, Y. and Prvulovic, M.},
+ title = {HeapMon: a helper-thread approach to programmable, automatic, and low-overhead memory bug detection},
+ journal = {IBM Journal of Research and Development},
+ volume = {50},
+ number = {2/3},
+ year = {2006},
+ pages = {261--275},
+ publisher = {IBM Corp.},
+ address = {Riverton, NJ},
+}
+
+% ----------------------------------------------------------------------
+% Misc
+
+@book{gamma95designpatterns,
+ author = {Gamma, Erich and Helm, Richard and Johnson, Ralph and Vlissides, John},
+ title = {Design patterns: elements of reusable object-oriented software},
+ year = {1995},
+ isbn = {0-201-63361-2},
+ publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+ address = {Boston, MA, USA},
+ }
+
+@book{schmidt00designpatterns,
+ author = {Schmidt, Douglas C. and Rohnert, Hans and Stal, Michael and Schultz, Dieter},
+ title = {Pattern-Oriented Software Architecture: Patterns for Concurrent and Networked Objects},
+ year = {2000},
+ isbn = {0471606952},
+ publisher = {John Wiley \& Sons, Inc.},
+ address = {New York, NY, USA},
+}
+
+@article{yuasa90snapshot,
+  title = {Real-time garbage collection on general-purpose machines},
+  author = {Yuasa, Taiichi},
+  journal = {Journal of Systems and Software},
+  volume = {11},
+  number = {3},
+  pages = {181--198},
+  year = {1990}
+}
+
+@article{hertz06merlin,
+ author = {Hertz, Matthew and Blackburn, Stephen M. and Moss, J. Eliot B. and McKinley, Kathryn S. and Stefanovi\'{c}, Darko},
+ title = {Generating object lifetime traces with Merlin},
+ journal = TOPLAS,
+ volume = {28},
+ number = {3},
+ year = {2006},
+ pages = {476--516},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+% ----------------------------------------------------------------------
+% Visualization
+
+@inproceedings{reiss05jove,
+ author = {Reiss, Steven P. and Renieris, Manos},
+ title = {Jove: {Java} as it happens},
+ booktitle = SOFTVIS,
+ year = {2005},
+ pages = {115--124},
+ location = {St. Louis, MO},
+ }
+
+@inproceedings{depauw93vis,
+ author = {De Pauw, Wim and Helm, Richard and Kimelman, Doug and Vlissides, John},
+ title = {Visualizing the behavior of object-oriented systems},
+ booktitle = OOPSLA,
+ year = {1993},
+ pages = {326--337},
+ location = {Washington, D.C.},
+ }
+
+@inproceedings{storey95shrimp,
+ author = {Storey, M.-A. D. and Muller, H. A.},
+ title = {Manipulating and documenting software structures using SHriMP views},
+ booktitle = {ICSM '95: Proceedings of the International Conference on Software Maintenance},
+ year = {1995},
+ pages = {275},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC},
+ }
+
+@inproceedings{depauw98jinsight,
+ author = {De Pauw, Wim and Vlissides, John M.},
+ title = {Visualizing Object-Oriented Programs with {Jinsight}},
+ booktitle = ECOOP,
+ year = {1998},
+ pages = {541--542},
+ location = {Brussels, Belgium},
+ }
+
+@inproceedings{depauw99leaks,
+ author = {De Pauw, Wim and Sevitsky, Gary},
+ title = {Visualizing Reference Patterns for Solving Memory Leaks in {Java}},
+ booktitle = ECOOP,
+ year = {1999},
+ pages = {116--134},
+ location = {Lisbon, Portugal},
+ }
+
+@inproceedings{printezis02gcspy,
+ author = {Printezis, Tony and Jones, Richard},
+ title = {GCspy: an adaptable heap visualisation framework},
+ booktitle = OOPSLA,
+ year = {2002},
+ pages = {343--358},
+ location = {Seattle, WA},
+ }
+
+@inproceedings{mitchell09yeti,
+ author = {Mitchell, Nick and Schonberg, Edith and Sevitsky, Gary},
+ title = {Making Sense of Large Heaps},
+ booktitle = ECOOP,
+ year = {2009},
+ pages = {77--97},
+ location = {Genoa, Italy},
+ }
+
+@ARTICLE{zimmerman02memory,
+	AUTHOR = "Thomas Zimmerman and Andreas Zeller",
+	TITLE = "Visualizing memory graphs",
+	JOURNAL = "Lecture Notes in Computer Science - Software Visualization",
+	VOLUME = "2269",
+	PAGES = "533-537",
+	YEAR = {2002}	}
+
+@ARTICLE{hill02ownership,
+	AUTHOR = "Trent Hill and James Noble and John Potter",
+	TITLE = "Scalable Visualizations of Object-Oriented Systems with Ownership Trees",
+	JOURNAL = "Journal of Visual Languages and Computing",
+        MONTH = {June},
+	PAGES = "319-339",
+	YEAR = {2002}	}
+
+@INPROCEEDINGS{pheng91dynamic,
+	AUTHOR = "Sokhom Pheng and Clark Verbrugge",
+	TITLE = "Dynamic data structure analysis for {Java} programs",
+	BOOKTITLE = "Proceedings of IEEE International Conference on Program Comprehension",
+	PAGES = "191-201",
+	YEAR = {2006}	}
+
+@inproceedings{scaffidi06prefuse, 
+ author = {Erkan, Ali S. and VanSlyke, T. J. and Scaffidi, Timothy M.},
+ title = {Data structure visualization with {LaTeX} and {Prefuse}},
+ booktitle = {ITiCSE '07: Proceedings of the 12th Annual SIGCSE Conference on Innovation and Technology in Computer Science Education},
+ year = {2007},
+ isbn = {978-1-59593-610-3},
+ pages = {301--305},
+ location = {Dundee, Scotland},
+ doi = {http://doi.acm.org/10.1145/1268784.1268870},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@inproceedings{sundararaman08HDPV,
+ author = {Sundararaman, Jaishankar and Back, Godmar},
+ title = {{HDPV: Interactive, faithful, in-vivo runtime state visualization for C/C++ and Java}},
+ booktitle = {SoftVis '08: Proceedings of the 4th ACM Symposium on Software Visualization},
+ year = {2008},
+ isbn = {978-1-60558-112-5},
+ pages = {47--56},
+ location = {Ammersee, Germany},
+ doi = {http://doi.acm.org/10.1145/1409720.1409729},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@ARTICLE{demsky09heap,
+	AUTHOR = "Brian Demsky and Martin Rinard",
+	TITLE = "Automatic Extraction of Heap Reference Properties in Object-Oriented Programs",
+	JOURNAL = "IEEE Transactions on Software Engineering",
+	PAGES = "305-324",
+	YEAR = {2009}	}
+
+@INPROCEEDINGS{reiss09heap,
+	AUTHOR = "Steven Reiss",
+	TITLE = "Visualizing the {Java} Heap to Detect Memory Problems",
+  booktitle = {VISSOFT '09: Proceedings of the 5th IEEE International Workshop on Visualizing Software for Understanding and Analysis},
+	PAGES = "73-80",
+	YEAR = {2009}	}
+
+@INPROCEEDINGS{heer05prefuse,
+  author = {Jeffrey Heer},
+  title = {Prefuse: a Toolkit for Interactive Information Visualization},
+  booktitle = {CHI '05: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems},
+  year = {2005},
+  pages = {421--430}	}
+
+@ARTICLE{marron10abstraction,
+  author = {Mark Marron and Cesar Sanchez and Zhendong Su},
+  title = {High-Level Heap Abstractions for Debugging Programs},
+  note = {\url{http://software.imdea.org/~marron/papers/publications.html}, Retrieved April 30, 2010},
+  year = {2010}	}
+
+@inproceedings{rayside06ownership,
+ author = {Rayside, Derek and Mendel, Lucy and Jackson, Daniel},
+ title = {A dynamic analysis for revealing object ownership and sharing},
+ booktitle = {WODA '06: Proceedings of the 2006 International Workshop on Dynamic Systems Analysis},
+ year = {2006},
+ pages = {57--64},
+ location = {Shanghai, China},
+ }
+
+@inproceedings{falke05dominance,
+ author = {Falke, R. and Klein, R. and Koschke, R. and Quante, J.},
+ title = {The Dominance Tree in Visualizing Software Dependencies},
+ booktitle = {VISSOFT '05: Proceedings of the 3rd IEEE International Workshop on Visualizing Software for Understanding and Analysis},
+ year = {2005},
+ isbn = {0-7803-9540-9},
+ pages = {24},
+ doi = {http://dx.doi.org/10.1109/VISSOF.2005.1684311},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+ }
+
+@inproceedings{aftandilian10heapviz,
+ author = {Aftandilian, Edward E. and Kelley, Sean and Gramazio, Connor and Ricci, Nathan and Su, Sara L. and Guyer, Samuel Z.},
+ title = {Heapviz: interactive heap visualization for program understanding and debugging},
+ booktitle = SOFTVIS,
+ year = {2010},
+ location = {Salt Lake City, Utah, USA},
+ pages = {53--62},
+} 
+
+
+% ---------------------------------------------------------------------------
+% Other
+@article{ cooperdominators,
+  author = {Keith D. Cooper and Timothy J. Harvey and Ken Kennedy},
+  title = {A Simple, Fast Dominance Algorithm},
+  journal = SP&E,
+  number = {4},
+  pages = {1-10},
+  year = {2001}
+}
+
+@article{lengauer79dominators,
+ author = {Lengauer, Thomas and Tarjan, Robert Endre},
+ title = {A fast algorithm for finding dominators in a flowgraph},
+ journal = {ACM Trans. Program. Lang. Syst.},
+ volume = {1},
+ number = {1},
+ year = {1979},
+ issn = {0164-0925},
+ pages = {121--141},
+ doi = {http://doi.acm.org/10.1145/357062.357071},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+@book{brooks75mythical,
+ author = {Frederick P. {Brooks, Jr.}},
+ title = {The Mythical Man-Month},
+ publisher = {Addison-Wesley},
+ year = {1975},
+}

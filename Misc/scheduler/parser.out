@@ -1,0 +1,144 @@
+
+
+Unused terminals:
+
+
+Grammar
+
+Rule 1     assignment -> VARIABLE ASSIGN NUMBER
+Rule 2     assignment -> VARIABLE ASSIGN NUMBER COMMA NUMBER COMMA NUMBER
+Rule 3     assignment -> VARIABLE ASSIGN BOOLEAN
+Rule 4     assignment -> VARIABLE ASSIGN STRING
+Rule 5     timeblock -> DAYS COLON NUMBER DASH NUMBER
+Rule 6     classinfo -> STRING COMMA STRING COMMA VARIABLE COMMA
+Rule 7     class -> classinfo timeblock
+Rule 8     class -> classinfo timeblock COMMA timeblock
+Rule 9     class -> classinfo timeblock COMMA timeblock COMMA timeblock
+Rule 10    class -> classinfo timeblock COMMA timeblock COMMA timeblock COMMA timeblock
+Rule 11    class -> classinfo timeblock COMMA timeblock COMMA timeblock COMMA timeblock COMMA timeblock
+
+Terminals, with rules where they appear
+
+ASSIGN               : 1 2 3 4
+BOOLEAN              : 3
+COLON                : 5
+COMMA                : 2 2 6 6 6 8 9 9 10 10 10 11 11 11 11
+DASH                 : 5
+DAYS                 : 5
+NUMBER               : 1 2 2 2 5 5
+STRING               : 4 6 6
+VARIABLE             : 1 2 3 4 6
+error                : 
+
+Nonterminals, with rules where they appear
+
+assignment           : 0
+class                : 
+classinfo            : 7 8 9 10 11
+timeblock            : 7 8 8 9 9 9 10 10 10 10 11 11 11 11 11
+
+
+Parsing method: LALR
+
+
+state 0
+
+    (0) S' -> . assignment
+    (1) assignment -> . VARIABLE ASSIGN NUMBER
+    (2) assignment -> . VARIABLE ASSIGN NUMBER COMMA NUMBER COMMA NUMBER
+    (3) assignment -> . VARIABLE ASSIGN BOOLEAN
+    (4) assignment -> . VARIABLE ASSIGN STRING
+
+    VARIABLE        shift and go to state 2
+
+
+    assignment                     shift and go to state 1
+
+state 1
+
+    (0) S' -> assignment .
+
+
+
+
+state 2
+
+    (1) assignment -> VARIABLE . ASSIGN NUMBER
+    (2) assignment -> VARIABLE . ASSIGN NUMBER COMMA NUMBER COMMA NUMBER
+    (3) assignment -> VARIABLE . ASSIGN BOOLEAN
+    (4) assignment -> VARIABLE . ASSIGN STRING
+
+    ASSIGN          shift and go to state 3
+
+
+
+state 3
+
+    (1) assignment -> VARIABLE ASSIGN . NUMBER
+    (2) assignment -> VARIABLE ASSIGN . NUMBER COMMA NUMBER COMMA NUMBER
+    (3) assignment -> VARIABLE ASSIGN . BOOLEAN
+    (4) assignment -> VARIABLE ASSIGN . STRING
+
+    NUMBER          shift and go to state 5
+    BOOLEAN         shift and go to state 6
+    STRING          shift and go to state 4
+
+
+
+state 4
+
+    (4) assignment -> VARIABLE ASSIGN STRING .
+
+    $end            reduce using rule 4 (assignment -> VARIABLE ASSIGN STRING .)
+
+
+
+state 5
+
+    (1) assignment -> VARIABLE ASSIGN NUMBER .
+    (2) assignment -> VARIABLE ASSIGN NUMBER . COMMA NUMBER COMMA NUMBER
+
+    $end            reduce using rule 1 (assignment -> VARIABLE ASSIGN NUMBER .)
+    COMMA           shift and go to state 7
+
+
+
+state 6
+
+    (3) assignment -> VARIABLE ASSIGN BOOLEAN .
+
+    $end            reduce using rule 3 (assignment -> VARIABLE ASSIGN BOOLEAN .)
+
+
+
+state 7
+
+    (2) assignment -> VARIABLE ASSIGN NUMBER COMMA . NUMBER COMMA NUMBER
+
+    NUMBER          shift and go to state 8
+
+
+
+state 8
+
+    (2) assignment -> VARIABLE ASSIGN NUMBER COMMA NUMBER . COMMA NUMBER
+
+    COMMA           shift and go to state 9
+
+
+
+state 9
+
+    (2) assignment -> VARIABLE ASSIGN NUMBER COMMA NUMBER COMMA . NUMBER
+
+    NUMBER          shift and go to state 10
+
+
+
+state 10
+
+    (2) assignment -> VARIABLE ASSIGN NUMBER COMMA NUMBER COMMA NUMBER .
+
+    $end            reduce using rule 2 (assignment -> VARIABLE ASSIGN NUMBER COMMA NUMBER COMMA NUMBER .)
+
+

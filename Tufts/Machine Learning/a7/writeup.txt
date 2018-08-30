@@ -1,0 +1,21 @@
+I only tested my LOF implementation one way: I generated a number of data sets with known outliers (with varying numbers of data points, how far the outliers lay, etc.) and ran LOF on these datasets with a few values of k to verify that it reliably picked out most, if not all, of the outliers. It did. I've supplied the test generator script (generator.py) as well; see that file for details on how the test data was generated.
+
+Secondarily, I examined the test data (in one, two, and three dimensions) visually to be sure the true outliers matched the found outliers, and extrapolated the success it had there to higher dimensions.
+
+
+
+Different k values affect the algorithm's perception of how much of an outlier a point really is. For LOF, having a too-high k (within reason) is not much of a problem for lower-dimensional data, but a low k for higher-dimensional data can cause a point to look like less of an outlier than it actually is. On the other hand, in my informal tests, COD behaved oppositely than LOF: it was more robust against lower k values with higher-dimensional data, but performed significantly worse for higher k with lower-dimensional data. The meaning of k and what values of k are good clearly depends on how exactly the chosen algorithm operates, so I can't draw conclusions about k in general. But for the specific LOF/25/5 combination, that is because the dimensionality of the data should roughly correlate with k so LOF can have a more accurate idea of the proximity of a given point is, since the space is much larger.
+
+
+
+The threshold wasn't hard-coded into the algorithm, but rather calculated from the LOF score. It was assumed that there was always at least one outlier, and so the largest jump of consecutive LOF scores (when the scores were sorted) was chosen as the dividing point. In my tests this worked very well, and at least makes intuitive sense -- clustered data will have LOF scores hovering around 1, whereas outliers should be grouped at the high end, (relatively) far away from 1.
+
+
+
+My method is quite simple. I considered a number of approaches, but was unsatisfied with k-means (presumably, having to figure out the number of clusters in some way before anything could be identified as an outlier) as a basis, or any method that took an exceptionally long time. Additionally, I wanted to see if I would be able to come up with a way to detect anomalies without a strong concept of clusters in the algorithm (I'm not sure if that's a reasonable thing to try, but I did anyway).
+
+My method simply calculates the k-distance for each data point for some k, and then using these score chooses an outlier threshold as before. It's very fast, and performs surprisingly well on both the supplied data sets and my generated test data sets. I came up with some improvements, but they all started getting dangerously close to LOF and I wanted to try something different, so I left the algorithm in it's very simple state. Higher k distances correlate to outliers, of course.
+
+This data was clearly not of the type to make this algorithm perform badly, but I have identified what such data would look like. Datas sets that are not very homogenous, in the sense that clusters that exist in the data have varying densities, cause big problems. A dense cluster's relatively close outlier might be obscured by the k-distances of in-cluster data points of some other, looser cluster! Because this algorithm has no sense of clusters, it has no way to compensate for this. In short, my attempt to build a cluster-agnostic anomaly detector didn't really work in the general case.
+
+An alternate algorithm that I would have liked to implement but didn't for time/complexity reasons would take the opposite approach: generate a clustering with DBSCAN, and then detect outliers by identifying the smallest "clusters" of one or two points. This is heavily dependent on DBSCAN's choice of when to add things to existing clusters, however.

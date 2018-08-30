@@ -1,0 +1,10 @@
+dimensions: 512x384, 196608 pixels total
+time: 32:26:18
+shape count: 225
+camera: <1000, 1000, 1000>
+focus: <0, 0, 0>
+grid distance: 1332.347
+resolution: 2.000
+rotation: 0.000
+
+notes: This is the first real render! Everything is working, I just set the parameters and let it go. No restrained testing conditions or anything here. But seeing as it took 32 hours, the next step will be either to get a new computer, or figure out networking so I can split the load.

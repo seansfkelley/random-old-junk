@@ -1,0 +1,125 @@
+
+%%!TEX root = ./heapvis.tex
+
+\section{Related Work}
+
+% SZG: nice idea, but it has serious issue (like copyright)
+%\todo{AG: If some of those tools have good screenshots that could be
+%  relevant to compare, you could add them so the reader has a better
+%  idea of what you're comparing. (and you seem to have the space).}
+
+Previous work on program analysis and understanding includes a number
+of techniques for visualizing the behavior of programs. A large body
+of prior research has focused primarily on helping programmers
+navigate and visualize the
+\emph{code}~\cite{depauw93vis,storey95shrimp,depauw98jinsight,reiss05jove}.
+As many computing researchers and practitioners have observed,
+however, understanding the \emph{data structures} of a program is
+often more valuable. Techniques for determining the structure of
+data in the heap fall into two main categories: static analysis and
+dynamic analysis. Static analysis algorithms, such as shape
+analysis~\cite{ghiya96shape,sagiv99shape}, build a compile-time
+approximation of possible heap configurations. In many cases, however,
+these abstractions are too imprecise for detailed program
+understanding and debugging tasks.  
+
+% SZG: this is not really an issue -- "dynamic analysis" can refer to
+% any analysis of the actual concrete behavior of a program
+%\todo{AG: Since your tool works offline (though collects the data
+%  online), how come it fits into a dynamic analysis tool? (this might
+%  just be my ignorance of the field) Or is the "dynamic analysis tool"
+%  category defined by the fact that you can interact with the graph?}
+
+Our work is most closely related to dynamic analysis tools that
+analyze the concrete heap (or a memory trace) in order to present the
+programmer with a graph or other visual representation of the actual
+state of the program. Since the main challenge for these tools is
+managing the scale of the data, the critical feature that
+distinguishes them is how they aggregate information for the
+user. Different choices lead to suitability for different tasks. Our
+specific goal for Heapviz is to help programmers understand the
+overall organization and structure of data.
+
+Several existing tools provide programmers with an unabstracted graph
+representation of the concrete 
+heap~\cite{zimmerman02memory,scaffidi06prefuse,sundararaman08HDPV}. 
+Without aggregation or
+interactive navigation, however, these visualizations do not scale
+well beyond a few hundred or thousand objects. Pheng and
+Verbrugge~\cite{pheng91dynamic} present a tool with two visualizations
+of the heap. The first is a detailed graph of individual objects and
+pointers, with no abstraction. Nodes are displayed according to the
+shape to which they belong (list, tree, or DAG -- from Ghiya and
+Hendren~\cite{ghiya96shape}). The second visualization consists of a
+line graph of the overall heap contents over time broken down by shape
+category.  Their tool focuses on the evolution of the heap over time;
+Heapviz, on the other hand, aims to make a single snapshot of the heap
+comprehensible.
+ 
+A number of existing heap visualization tools focus primarily on
+identifying memory utilization problems, such as memory bloat and
+memory leaks. The main difference between Heapviz and these tools is
+that they give up much of the detail of the heap organization
+necessary to understand how the data structures work.
+
+% SZG: I don't understand this: what is Pheng06?
+%\todo{AG: I was wondering why there wasn't a critique of Pheng 06, and
+%  it's not super clear if you are talking about their work in the 2nd
+%  paragraph.  Is this new paragraph a new idea, or the explanation of
+%  the previous paragraph' examples? If so, I would merge the two
+%  paragraph. }
+
+De Pauw et al.~\cite{depauw99leaks} present a tool aimed at 
+finding spurious object references. The tool collapses the heap graph by
+aggregating groups of objects with similar reference patterns. It also
+supports interactive navigation, expanding and contracting of
+aggregated nodes. While similar in spirit, this tool is focused on
+finding spurious references and requires some programmer intervention
+to identify which references to record and display.
+
+Several tools aggregate objects by
+ownership~\cite{rayside06ownership,hill02ownership,mitchell09yeti}.
+These tools first analyze the heap and build a model of object
+ownership, then aggregate objects that have similar patterns of
+ownership, type, or lifetime. The visualization typically presents the
+abstracted graph with annotations that summarize the properties of the
+aggregated nodes.  The DYMEM memory visualization tool~\cite{reiss09heap} 
+shows the heap
+as a strict tree, duplicating subtrees as necessary, and uses an
+elaborate coloring scheme to indicate the amount of memory used and
+owned by groups of objects. These tools are often not well-suited for
+general program understanding, however, since they abstract away
+internal organization and individual objects.
+
+Demsky and Rinard~\cite{demsky09heap} present a heap visualization 
+based on a dynamic analysis of object \emph{roles}, or patterns of use 
+in the program. The tool generates a role transition diagram, which 
+focuses on object lifecycles, rather than the overall organization of 
+the data. While this tool presents a unique view, scalability appears 
+to be a concern for large programs.
+
+Most closely related to Heapviz is the work of Marron et
+al.~\cite{marron10abstraction}. They process the heap graph using 
+an abstract
+function previously developed for use in a sophisticated static pointer
+analysis. The analysis attempts to preserve information about internal
+structure (such as sharing) whenever nodes are collapsed.
+
+% GCSpy~\cite{printezis02gcspy}: shows GC behavior, not heap structure.
+
+%\textbf{Need to look up:}
+
+%Eclipse memory analyzer~\cite{eclipsemat}
+
+%Ownership trees~\cite{hill02ownership}: need to find paper.
+
+%\textbf{TODO:}
+
+%Do we need citations on general heap analysis -- both static and dynamic?
+
+
+%Prior work by Mitchell~\cite{mitchell06ownership} characterized heaps
+%through analysis of the ownership structure.  In constrast, we do not display
+%the dominator tree (by default) but rather use dominance relations to 
+%determine a hierarchy
+%of objects in the screen layout. 

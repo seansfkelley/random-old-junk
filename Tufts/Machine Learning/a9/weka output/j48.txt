@@ -1,0 +1,111 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     waveform
+Instances:    600
+Attributes:   15
+              x0
+              x1
+              x2
+              x3
+              x4
+              x5
+              x6
+              x7
+              x8
+              x9
+              x10
+              x11
+              x12
+              x13
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+x2 <= 3.02
+|   x6 <= 3.02
+|   |   x1 <= 0.69
+|   |   |   x5 <= 2.29
+|   |   |   |   x10 <= 3.49: - (6.0)
+|   |   |   |   x10 > 3.49: + (57.0/24.0)
+|   |   |   x5 > 2.29: + (27.0/1.0)
+|   |   x1 > 0.69
+|   |   |   x0 <= 0.21
+|   |   |   |   x5 <= 2.27
+|   |   |   |   |   x11 <= 5.94
+|   |   |   |   |   |   x2 <= -0.93: + (2.0)
+|   |   |   |   |   |   x2 > -0.93
+|   |   |   |   |   |   |   x9 <= 4.88: - (8.0)
+|   |   |   |   |   |   |   x9 > 4.88
+|   |   |   |   |   |   |   |   x0 <= -0.61: + (4.0/1.0)
+|   |   |   |   |   |   |   |   x0 > -0.61: - (2.0)
+|   |   |   |   |   x11 > 5.94: + (3.0)
+|   |   |   |   x5 > 2.27: + (8.0)
+|   |   |   x0 > 0.21
+|   |   |   |   x8 <= 3.76: - (66.0)
+|   |   |   |   x8 > 3.76
+|   |   |   |   |   x7 <= 3.36
+|   |   |   |   |   |   x8 <= 4.22
+|   |   |   |   |   |   |   x0 <= 1.31: + (2.0)
+|   |   |   |   |   |   |   x0 > 1.31: - (2.0)
+|   |   |   |   |   |   x8 > 4.22: - (9.0)
+|   |   |   |   |   x7 > 3.36: + (3.0)
+|   x6 > 3.02
+|   |   x12 <= 4.11
+|   |   |   x7 <= 3.23
+|   |   |   |   x1 <= 2.18
+|   |   |   |   |   x4 <= 0.03
+|   |   |   |   |   |   x0 <= 1.64: + (3.0/1.0)
+|   |   |   |   |   |   x0 > 1.64: - (2.0)
+|   |   |   |   |   x4 > 0.03: + (38.0/1.0)
+|   |   |   |   x1 > 2.18
+|   |   |   |   |   x10 <= 4.17: - (6.0)
+|   |   |   |   |   x10 > 4.17: + (2.0)
+|   |   |   x7 > 3.23: + (168.0)
+|   |   x12 > 4.11
+|   |   |   x7 <= 3.57
+|   |   |   |   x4 <= -0.41: + (2.0)
+|   |   |   |   x4 > -0.41: - (7.0)
+|   |   |   x7 > 3.57: + (3.0)
+x2 > 3.02
+|   x8 <= 3.45: - (161.0)
+|   x8 > 3.45
+|   |   x5 <= 4.05: - (4.0/1.0)
+|   |   x5 > 4.05: + (5.0)
+
+Number of Leaves  : 	26
+
+Size of the tree : 	51
+
+
+Time taken to build model: 0.13 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         505               84.1667 %
+Incorrectly Classified Instances        95               15.8333 %
+Kappa statistic                          0.6833
+Mean absolute error                      0.1673
+Root mean squared error                  0.375 
+Relative absolute error                 33.4632 %
+Root relative squared error             75.0087 %
+Total Number of Instances              600     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.827     0.143      0.852     0.827     0.839      0.873    -
+                 0.857     0.173      0.832     0.857     0.844      0.873    +
+Weighted Avg.    0.842     0.158      0.842     0.842     0.842      0.873
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 248  52 |   a = -
+  43 257 |   b = +
+

@@ -1,0 +1,10 @@
+dimensions: 160x128, 20480 pixels total
+time: 0:02:54
+shape count: 2
+camera: <1000, 500, 2000>
+focus: <-64, -32, -32>
+grid distance: 1527.525
+resolution: 1.500
+rotation: 0.000
+
+notes: Made transparency work correctly! Rays now have a 'light' property that gets modified as it passes through objects according to their color and transparency. I also fixed the weird line of bright spots that was in the previous image. Sometimes, the t value of a ray was very close to zero (on the scale of e-15) that it counted as positive even though it should be zero. So I added the T_THRESHOLD value to give a little wiggle room without having to round. This was easier to fix than the first rounding error I came up against, because 1. I knew what to look for and 2. the error was large enough that it was actually printed. Ambient light isn't working correctly, so I removed it until further notice.

@@ -1,0 +1,18 @@
+Sean Kelley
+Assignment 5
+
+1d)
+As k increases, the SSE goes to zero. This is because the clusters are smaller and thus SSE is also smaller for each data point. In the case of k = N, the SSE is zero. This implies that SSE can't be used to choose a good k, as it will always we biased in favor of higher ks until k = N is reached.
+
+e)
+As discussed in class, there the scatter criteria that fixes some of the problems with SSE -- it favors dense clusters but also clusters that are far apart from each other.
+
+2a)
+The method implemented in code is not precisely what I had intended to make; however, there were serious memory-related bugs that I was not able to pin down after extensive debugging so I simplified the method until it worked.
+
+Originally, it was to run k-means on a subset of the data multiple times, and then take the cluster centers that were computed there and average the corresponding centers to produce a set of starting cluster centers for the proper k-means algorithm. In effect, it was running k-means more times, but faster. I was not able to think of a reliable method to average sets of cluster centers in a way that would ensure that corresponding cluster centers were matched up and averaged together, so instead I decided to run a single k-means on the computed cluster centers and return the results as the starting points for the main algorithm.
+
+Due to memory problems, however, I was only able to get a subset of this preprocessing working: as implemented, the code simply runs k-means on a subset of the data, and returns the computed centers.
+
+e)
+The method did not produce /significantly/ better results, but it did reliably produce better results for all 12 values of k tested. I ran this method 25 times for each k like the previous part, and the standard deviations of the mean SSEs across the trials were often similar to those in the previous trials, indicating that this method can produce better results but doesn't do so with any stronger a guarantee than the previous method.

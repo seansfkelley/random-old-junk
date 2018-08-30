@@ -1,0 +1,10 @@
+dimensions: 128x128, 16384 pixels total
+time: 0:12:22
+shape count: 10
+camera: <-750, 1000, 2000>
+focus: <0, 0, 0>
+grid distance: 1179.248
+resolution: 1.000
+rotation: 0.000
+
+notes: First of two images with a fixed random seed, to compare the new multiple-light method (summing all light that hits the surface, than truncating each component of it to 1) and the old single-light method (which work correctly).

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+
+<key id="types" for="node" attr.name="types" attr.type="string"/>
+<key id="linearity" for="node" attr.name="linearity" attr.type="int"/>
+<key id="shapeType" for="node" attr.name="shapeType" attr.type="string"/>
+<key id="cardinality" for="node" attr.name="cardinality" attr.type="string"/>
+<key id="roottype" for="node" attr.name="roottype" attr.type="string"/>
+<key id="collapsed" for="node" attr.name="collapsed" attr.type="boolean"/>
+<key id="hidden" for="node" attr.name="hidden" attr.type="boolean"/>
+<key id="children" for="node" attr.name="children" attr.type="int"/>
+<key id="id" for="node" attr.name="id" attr.type="int"/>
+<key id="owner" for="node" attr.name="owner" attr.type="int"/>
+
+<key id="label" for="edge" attr.name="label" attr.type="string"/>
+<key id="nullable" for="edge" attr.name="nullable" attr.type="boolean"/>
+
+<graph edgedefault="directed">
+
+<!-- <node id="Test3.list">
+ <data key="roottype">static</data>
+</node>
+<node id="rootJavaFrame-200000-2">
+ <data key="roottype">stack</data>
+</node>
+<node id="rootJavaFrame-200000-1">
+ <data key="roottype">stack</data>
+</node>
+<node id="rootJavaFrame-200000-0">
+ <data key="roottype">stack</data>
+</node> -->
+<node id="0">
+ <data key="id">0</data>
+ <data key="types">java.util.LinkedList</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="0" target="1">
+ <data key="nullable">false</data>
+ <data key="label">{1, header, 1, np}</data>
+</edge>
+<node id="22">
+ <data key="id">22</data>
+ <data key="types">java.lang.String[]</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+ <data key="cardinality">card-0</data>
+</node>
+<node id="1">
+ <data key="id">1</data>
+ <data key="types">java.util.LinkedList$Entry</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="1" target="2">
+ <data key="nullable">false</data>
+ <data key="label">{2, previous, 1, np}</data>
+</edge>
+<edge source="1" target="11">
+ <data key="nullable">false</data>
+ <data key="label">{33, next, 1, np}</data>
+</edge>
+<node id="2">
+ <data key="id">2</data>
+ <data key="types">java.util.LinkedList$Entry</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="2" target="3">
+ <data key="nullable">false</data>
+ <data key="label">{3, previous, 1, np}</data>
+</edge>
+<edge source="2" target="1">
+ <data key="nullable">false</data>
+ <data key="label">{31, next, 1, np}</data>
+</edge>
+<edge source="2" target="21">
+ <data key="nullable">false</data>
+ <data key="label">{32, element, 1, np}</data>
+</edge>
+<node id="11">
+ <data key="id">11</data>
+ <data key="types">java.util.LinkedList$Entry</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="11" target="1">
+ <data key="nullable">false</data>
+ <data key="label">{12, previous, 1, np}</data>
+</edge>
+<edge source="11" target="10">
+ <data key="nullable">false</data>
+ <data key="label">{13, next, 1, np}</data>
+</edge>
+<edge source="11" target="12">
+ <data key="nullable">false</data>
+ <data key="label">{14, element, 1, np}</data>
+</edge>
+<node id="3">
+ <data key="id">3</data>
+ <data key="types">java.util.LinkedList$Entry</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="3" target="4">
+ <data key="nullable">false</data>
+ <data key="label">{4, previous, 1, np}</data>
+</edge>
+<edge source="3" target="2">
+ <data key="nullable">false</data>
+ <data key="label">{29, next, 1, np}</data>
+</edge>
+<edge source="3" target="20">
+ <data key="nullable">false</data>
+ <data key="label">{30, element, 1, np}</data>
+</edge>
+<node id="21">
+ <data key="id">21</data>
+ <data key="types">java.lang.Object</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<node id="10">
+ <data key="id">10</data>
+ <data key="types">java.util.LinkedList$Entry</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="10" target="11">
+ <data key="nullable">false</data>
+ <data key="label">{11, previous, 1, np}</data>
+</edge>
+<edge source="10" target="9">
+ <data key="nullable">false</data>
+ <data key="label">{15, next, 1, np}</data>
+</edge>
+<edge source="10" target="13">
+ <data key="nullable">false</data>
+ <data key="label">{16, element, 1, np}</data>
+</edge>
+<node id="12">
+ <data key="id">12</data>
+ <data key="types">java.lang.Object</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<node id="4">
+ <data key="id">4</data>
+ <data key="types">java.util.LinkedList$Entry</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="4" target="5">
+ <data key="nullable">false</data>
+ <data key="label">{5, previous, 1, np}</data>
+</edge>
+<edge source="4" target="3">
+ <data key="nullable">false</data>
+ <data key="label">{27, next, 1, np}</data>
+</edge>
+<edge source="4" target="19">
+ <data key="nullable">false</data>
+ <data key="label">{28, element, 1, np}</data>
+</edge>
+<node id="20">
+ <data key="id">20</data>
+ <data key="types">java.lang.Object</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<node id="9">
+ <data key="id">9</data>
+ <data key="types">java.util.LinkedList$Entry</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="9" target="10">
+ <data key="nullable">false</data>
+ <data key="label">{10, previous, 1, np}</data>
+</edge>
+<edge source="9" target="8">
+ <data key="nullable">false</data>
+ <data key="label">{17, next, 1, np}</data>
+</edge>
+<edge source="9" target="14">
+ <data key="nullable">false</data>
+ <data key="label">{18, element, 1, np}</data>
+</edge>
+<node id="13">
+ <data key="id">13</data>
+ <data key="types">java.lang.Object</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<node id="5">
+ <data key="id">5</data>
+ <data key="types">java.util.LinkedList$Entry</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="5" target="6">
+ <data key="nullable">false</data>
+ <data key="label">{6, previous, 1, np}</data>
+</edge>
+<edge source="5" target="4">
+ <data key="nullable">false</data>
+ <data key="label">{25, next, 1, np}</data>
+</edge>
+<edge source="5" target="18">
+ <data key="nullable">false</data>
+ <data key="label">{26, element, 1, np}</data>
+</edge>
+<node id="19">
+ <data key="id">19</data>
+ <data key="types">java.lang.Object</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<node id="8">
+ <data key="id">8</data>
+ <data key="types">java.util.LinkedList$Entry</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="8" target="9">
+ <data key="nullable">false</data>
+ <data key="label">{9, previous, 1, np}</data>
+</edge>
+<edge source="8" target="7">
+ <data key="nullable">false</data>
+ <data key="label">{19, next, 1, np}</data>
+</edge>
+<edge source="8" target="15">
+ <data key="nullable">false</data>
+ <data key="label">{20, element, 1, np}</data>
+</edge>
+<node id="14">
+ <data key="id">14</data>
+ <data key="types">java.lang.Object</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<node id="6">
+ <data key="id">6</data>
+ <data key="types">java.util.LinkedList$Entry</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="6" target="7">
+ <data key="nullable">false</data>
+ <data key="label">{7, previous, 1, np}</data>
+</edge>
+<edge source="6" target="5">
+ <data key="nullable">false</data>
+ <data key="label">{23, next, 1, np}</data>
+</edge>
+<edge source="6" target="17">
+ <data key="nullable">false</data>
+ <data key="label">{24, element, 1, np}</data>
+</edge>
+<node id="18">
+ <data key="id">18</data>
+ <data key="types">java.lang.Object</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<node id="7">
+ <data key="id">7</data>
+ <data key="types">java.util.LinkedList$Entry</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<edge source="7" target="8">
+ <data key="nullable">false</data>
+ <data key="label">{8, previous, 1, np}</data>
+</edge>
+<edge source="7" target="6">
+ <data key="nullable">false</data>
+ <data key="label">{21, next, 1, np}</data>
+</edge>
+<edge source="7" target="16">
+ <data key="nullable">false</data>
+ <data key="label">{22, element, 1, np}</data>
+</edge>
+<node id="15">
+ <data key="id">15</data>
+ <data key="types">java.lang.Object</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<node id="17">
+ <data key="id">17</data>
+ <data key="types">java.lang.Object</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+</node>
+<node id="16">
+ <data key="id">16</data>
+ <data key="types">java.lang.Object</data>
+ <data key="linearity">1</data>
+ <data key="shapeType">S</data>
+ <data key="collapsed">true</data>
+</node>
+
+<node id="101">
+ <data key="id">101</data>
+ <data key="owner">16</data>
+ <data key="types">TEST NODE 1</data>
+</node>
+<node id="102">
+ <data key="id">102</data>
+ <data key="owner">16</data>
+ <data key="types">TEST NODE 2</data>
+ <data key="collapsed">true</data>
+</node>
+<node id="103">
+ <data key="id">103</data>
+ <data key="owner">16</data>
+ <data key="types">TEST NODE 3</data>
+</node>
+<edge source="16" target="101"/>
+<edge source="16" target="102"/>
+<edge source="16" target="103"/>
+
+<node id="201">
+ <data key="id">201</data>
+ <data key="owner">102</data>
+ <data key="types">TEST NODE 2-1</data>
+</node>
+<node id="202">
+ <data key="id">202</data>
+ <data key="owner">102</data>
+ <data key="types">TEST NODE 2-2</data>
+</node>
+<node id="203">
+ <data key="id">203</data>
+ <data key="owner">102</data>
+ <data key="types">TEST NODE 2-3</data>
+</node>
+
+<edge source="102" target="201"/>
+<edge source="102" target="202"/>
+<edge source="102" target="203"/>
+
+</graph>
+</graphml>

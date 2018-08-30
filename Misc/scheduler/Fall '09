@@ -1,0 +1,17 @@
+red=213,13,13
+purple=140,7,173
+yellow=247,233,4
+blue=7,67,238
+teal=4,215,228
+pink=255,112,112
+light blue=114,147,242
+separator=\n
+filename=/Users/sk/Documents/schedule_fall.png
+class_size=14
+height=500
+spacing=10
+
+Computer\nArchitecture,Halligan 111B,red,MWF:1330-1445
+Cryptography,Anderson 112,purple,MW:1500-1615
+Calculus III,Anderson 309,yellow,TRF:1200-1250
+Photography,Jackson 4,green,TR:1330-1630

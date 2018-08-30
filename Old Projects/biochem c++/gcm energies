@@ -1,0 +1,95 @@
+glutamate
+-155.84
+>CH-:1
+-CH2-:2
+-COO:2
+-NH2:1
+Origin:1
+
+histidine
+-37.34
+ring =C<:1
+-CH2-:1
+ring =CH-:2
+ring =N-:1
+>CH-:1
+ring -NH-:1
+-COO:1
+-NH2:1
+Origin:1
+heteroaromatic:1
+
+ATP
+-673.85
+ring -N<:1
+two fused rings >C=:2
+ring -CH<:4
+ring =CH-:2
+ring =N-:3
+ring -O-:1
+ring =C<:1
+-OH:2
+-NH2:1
+-CH2-:1
+-OPO2-:2
+-OPO3:1
+Origin:1
+heteroaromatic:2
+
+cAMP
+-191.87
+ring -N<:1
+ring -CH<:2
+two fused rings >C=:2
+ring =CH-:2
+ring -O-:2
+ring =N-:3
+two fused rings >CH-:2
+-OH:1
+ring =C<:1
+ring -OPO2-:1
+ring -CH2-:1
+-NH2:1
+Origin:1
+heteroaromatic:2
+
+d-ribose
+-181.62
+ring -CH<:4
+ring -O-:1
+-CH2-:1
+-OH:4
+Origin:1
+
+dextrose
+-218.28
+ring -CH<:5
+ring -O-:1
+-CH2-:1
+-OH:5
+Origin:1
+
+phenol
+-9.9
+aromatic ring =C<:1
+aromatic ring =CH-:5
+-OH:1
+Origin:1
+
+pyridine
+44.52
+ring =CH-:5
+ring =N-:1
+Origin:1
+heteroaromatic:1
+
+tyrosine
+-82.24
+aromatic ring =C<:2
+aromatic ring =CH-:4
+-CH2-:1
+-OH:1
+>CH-:1
+-COO:1
+-NH2:1
+Origin:1

@@ -1,0 +1,112 @@
+\relax 
+\citation{brooks75mythical}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\citation{jprobe}
+\citation{sevitsky01jinsight}
+\citation{hprof}
+\citation{heer05prefuse}
+\citation{depauw93vis}
+\citation{storey95shrimp}
+\citation{depauw98jinsight}
+\citation{reiss05jove}
+\citation{ghiya96shape}
+\citation{sagiv99shape}
+\citation{zimmerman02memory}
+\citation{scaffidi06prefuse}
+\citation{sundararaman08HDPV}
+\citation{pheng91dynamic}
+\citation{ghiya96shape}
+\citation{depauw99leaks}
+\citation{rayside06ownership}
+\citation{hill02ownership}
+\citation{mitchell09yeti}
+\citation{reiss09heap}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{3}}
+\citation{demsky09heap}
+\citation{marron10abstraction}
+\citation{hprof}
+\citation{graphml}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The Heapviz pipeline. The JVM and HPROF generate a heap snapshot from a running Java program. Our heap analyzer then parses this snapshot, builds a graph representation of the concrete heap, summarizes the graph, and outputs a heap abstraction. Our heap visualizer reads the heap abstraction and displays the graph, enabling the user to explore it interactively. }}{4}}
+\newlabel{fig:pipeline}{{1}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}System Overview}{4}}
+\citation{hprof}
+\citation{jvmti}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces An example of applying our summarization algorithm to a linked list. Our algorithm first summarizes all \texttt  {LinkedList\$Entry} objects into a single node, then summarizes all \texttt  {T} objects into a single node. Note that the summary would look the same regardless of the number of \texttt  {T} objects in the linked list.}}{5}}
+\newlabel{fig:linked-list}{{2}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Heap Analysis}{5}}
+\newlabel{analysis}{{4}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Heap Snapshot}{5}}
+\citation{blackburn06dacapo}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Heap Analyzer}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Input Format}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Summarization Algorithm}{6}}
+\citation{graphml}
+\citation{heer05prefuse}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Output Format}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Heap Visualization}{7}}
+\newlabel{visualization}{{5}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Graph Display}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Force-Directed Layout}{7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Visual Encoding}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Interaction}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Graph Display}{8}}
+\citation{specjvm98}
+\citation{specjbb2000}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Groups}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.3}Query and Selection}{9}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Case Studies}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Constructed Examples}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.1}Hash table}{10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.2}Hash Map}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A hash map with a bad hashing function. The key-value pairs can be seen (as well as manually inspected by the user) dangling from their respective map nodes. The orange node is the \texttt  {java.util.HashMap}; the large central blue node is the internal hash-bucket array it uses. Here, label-less nodes are used because labels won't provide much additional information. \leavevmode {\color  {red}There's a variant with the non-structural nodes (i.e. key/value pairs) hidden. Use that instead?}}}{11}}
+\newlabel{fig:broken-hashmap}{{3}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.1.3}Red-Black Tree}{11}}
+\citation{specjvm98}
+\citation{specjbb2000}
+\citation{specjvm98}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Real Examples}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}\_209\_db}{12}}
+\citation{specjbb2000}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A summarized visualization of the \_209\_db benchmark. The bottom left shows the full graph, with the inset zoomed to show the program's primary data structure, a database. This database contains two \texttt  {Vector} objects, each containing strings or database entries. The node representing all entries in this database summarizes 15,332 nodes. Each database entry contain a \texttt  {Vector} of strings; the total number of these strings in the database is 122,656. }}{13}}
+\newlabel{fig:db-zoomed}{{4}{13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2}SPEC JBB 2000}{14}}
+\newlabel{jbb}{{6.2.2}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Future Work}{14}}
+\newlabel{future}{{7}{14}}
+\citation{reichenbach10deal}
+\bibstyle{plain}
+\bibdata{heapvis}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusions}{15}}
+\newlabel{conclusions}{{8}{15}}
+\bibcite{blackburn06dacapo}{1}
+\bibcite{brooks75mythical}{2}
+\bibcite{depauw93vis}{3}
+\bibcite{depauw99leaks}{4}
+\bibcite{depauw98jinsight}{5}
+\bibcite{demsky09heap}{6}
+\bibcite{scaffidi06prefuse}{7}
+\bibcite{ghiya96shape}{8}
+\bibcite{graphml}{9}
+\bibcite{heer05prefuse}{10}
+\bibcite{hill02ownership}{11}
+\bibcite{marron10abstraction}{12}
+\bibcite{mitchell09yeti}{13}
+\bibcite{hprof}{14}
+\bibcite{pheng91dynamic}{15}
+\bibcite{jprobe}{16}
+\bibcite{rayside06ownership}{17}
+\bibcite{reichenbach10deal}{18}
+\bibcite{reiss09heap}{19}
+\bibcite{reiss05jove}{20}
+\bibcite{sagiv99shape}{21}
+\bibcite{sevitsky01jinsight}{22}
+\bibcite{specjvm98}{23}
+\bibcite{specjbb2000}{24}
+\bibcite{storey95shrimp}{25}
+\bibcite{jvmti}{26}
+\bibcite{sundararaman08HDPV}{27}
+\bibcite{zimmerman02memory}{28}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A summarized visualization of the SPEC JBB 2000 benchmark, which contains 117,819 objects in the concrete heap at this point in program execution. The summarized graph contains 7578 nodes. Although some large data structures are visible after this significant reduction, the graph is still cluttered.}}{19}}
+\newlabel{fig:jbb}{{5}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces An example of the one-to-one mapping between ``leaf'' elements that we observed in SPEC JBB 2000. No matter what other objects point to these objects, they will not be summarized because the one-to-one structure guarantees that each has a unique predecessor set.}}{20}}
+\newlabel{fig:failure}{{6}{20}}

@@ -1,0 +1,110 @@
+Group Inspection List Design Considerations
+
+When examining a group, what do we want to see?
+    1. List of types that are in the group
+    2. Individual instances on demand
+        2a. Also want to be able to see the members of these instances
+    3. A visual comparison of the types/instances
+
+The cleanest solution is to augment the list so it doubles as a miniature visualization.
+
+What ways can we show what we want to see?
+    1. Compress like instances into aggregate type items
+    2. Allow user to expand type items into instance items on demand
+        2a. The hover window works well; this should be workable into the new list
+
+#3 is where the interesting problem lies.
+
+But before we address question #3, we must ask these important questions:
+    1. What is the information we want to communicate?
+    2. What is the information we want to communicate?
+    3. What is the information we want to communicate?
+
+Once we have answered these three questions, we can design the appropriate visualization. If
+there is no further information we want to communicate (i.e., no visual comparison between items),
+then we are already done.
+
+ASSUMING we want to show a comparison of size (bytes, instances, any other numerical metric) between
+types and their instances, we have a few options.
+
+What visual traits do we have to choose from to communicate this information?
+    - Flexible height of list items
+    - List items can be turned into either horizontal or vertical bar charts
+        - In particular, stacked bar charts will be useful
+    - We can insert small, space-efficient visualizations directly into the list
+    - Icons beside each item
+
+Specifically, what visual elements can we use?
+    1. Using items collectively as a stacked bar chart by modifying their heights (supports both
+        relative and absolute comparisons)
+    2. Using a particular type as a (horizontal) stacked bar chart to represent the size of its
+        contained instances relative to each other
+    3. Using a particular type as a bar chart to represent the total size of its contents relative 
+        to other types
+    4. Using a small horizontal sub-bar for types to indicate their relative sizes
+    5. Packing instances elements into a one-type treemap (supports both relative and absolute
+        comparisons)
+    6. Icons, though none of the following designs use these
+
+Time for some specific designs.
+
+The inspiration for these designs is that the items can be resized in such a way as to act like
+bar charts and communicate information about their contents or the group. Whether we want to show
+relative or absolute sizes is an important consideration. It is also important to note that
+because instances will be grouped under a type, it is not necessary to display the type of each
+individual instances, allowing us to reduce visual clutter.
+
+What visualizations can we produce from these elements?
+    1. Treemap: each type node is optionally scaled by the size of its contents. Expanding a node
+        produces a miniature treemap describing every single instance contained and allows the user
+        to mouse over for inspection. Accurately depicts sizes within a type, but not necessarily
+        between types.
+    2. Height stacked bar chart: each type node is scaled by the size of its contents. Expanding
+        a node produces a list of instances, each one also scaled by its size. The entire window
+        acts as a stacked bar chart, but absolute comparisons between any two nodes (of either type)
+        is difficult. This was my original design that I have already implemented.
+    3. Scaled horizontal stacked bar chart: each type has a constant height and is instead broken
+        up horizontally into a stacked bar chart of its contents. Additionally, the width of each
+        type item is scaled relative to the sizes of all other type items currently displayed. Items
+        are not expandable, but can be moused over. Very good at comparing types to each other
+        and to comparing instances within a type to each other, as well as instances between types
+        (depending on the sizing metric chosen).
+    4. Doubled bar chart: each type item is as before, except that they occupy the full width they are
+        allowed. This negates the ability to compare between types, but is more space efficient and
+        does not effectively hide rare types by scaling them down too far. An optional mini-bar chart
+        below the main one on each type displays the size of the type relative to the largest type 
+        currently displayed, partially resolving the lack of comparisons between types.
+
+What problems do these visualizations have?
+    1. None of them can gracefully handle lots of small items. We clearly must enforce some minimum-size
+        requirement of the visual appearance in order to keep such nodes from disappearing, but this
+        of course raises two problems:
+        * Too many small items blows up the size of type/instances, effectively lying to the user
+        - By what metric should nodes be sized? Should the extra space small items are allowed be 
+            carved out of existing items or should they simply be bumped up in size?
+        On the other hand, not sizing items at all already produces a bias towards small items as they
+        are on equal footing with the largest items.
+    2. Mouseover inspection is difficult with these since the information is so visually dense.
+    3. Implementation-wise, some of the interactions these must support are difficult to produce (the
+        treemap is especially guilty of this).
+
+* This is by far the most important question and hardest to answer. Possible solutions I have come up with:
+    - Put all items that are too small into an "other" group which must be expanded some other way to
+        investigate the contents of
+        - Problematic if the user happens to be interested in the small items
+        - Division of information based on a pretty arbitrary metric
+    - Put items into buckets based on their sizes, which each must be expanded some other way
+        - More consistent design
+        - Doesn't punish smaller items unnecessarily
+        - Guarantees an extra step of work between the user and desired information
+    - Sort instance items but don't size them
+        - Basically means ignore everything I just described... may be useful only if user is interested
+            only in type nodes
+
+Major redesigns are of course possible and would circumvent at least some of these problems. The biggest
+restriction on the display is that instance items must appear adjacent to (below, really) their corresponding
+type items. If we remove that restriction, we can do some interesting things:
+    1. Replace entire list with an expandable treemap that begins showing only types and can be expanded
+        to display instances
+    2. Mix instances together based solely on their size, regardless of what group they belong to - in some
+        cases, this may be the behavior the user desires

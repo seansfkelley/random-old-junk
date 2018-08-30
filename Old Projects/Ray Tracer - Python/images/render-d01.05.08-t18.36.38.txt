@@ -1,0 +1,10 @@
+dimensions: 256x256, 65536 pixels total
+time: 2:24:57
+shape count: 30
+camera: <1000, 500, 2000>
+focus: <0, 0, 0>
+grid distance: 1527.525
+resolution: 1.500
+rotation: 0.000
+
+notes: Just a confirmation that transparency really does work.

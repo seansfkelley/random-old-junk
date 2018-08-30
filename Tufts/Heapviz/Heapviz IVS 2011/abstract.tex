@@ -1,0 +1,30 @@
+\begin{abstract}
+
+Understanding the data structures in a program is crucial to understanding how
+the program works, or why it doesn't work. Inspecting the code that implements
+the data structures, however, is an arduous task and often fails to yield
+insights into the global organization of a program's data. Inspecting the
+actual contents of the heap solves these problems but presents a significant
+challenge of its own: finding an effective way to present the enormous number
+of objects it contains.
+
+In this paper we present \emph{Heapviz}, a tool for visualizing and exploring
+snapshots of the heap obtained from a running Java program.  Unlike existing
+tools, such as traditional debuggers, Heapviz presents a global view of the
+program state as a graph, together with powerful interactive capabilities for
+navigating it. Our tool employs several key techniques that help manage the
+scale of the data. First, we reduce the size and complexity of the graph by
+using algorithms inspired by static shape analysis to aggregate the nodes that
+make up a data structure. Second, we implement a powerful visualization 
+component whose interactive interface provides extensive support for exploring
+the graph. The user can search for objects based on type and connectivity 
+and field values, group objects, and color or hide and show each
+group. The user may also inspect individual objects to see their field values
+and neighbors in the graph.  These interactive abilities help the user manage
+the complexity of these huge graphs.
+
+By applying Heapviz to both constructed and real-world examples, we show that 
+Heapviz provides programmers with a powerful and intuitive tool for exploring 
+program behavior.
+
+\end{abstract}

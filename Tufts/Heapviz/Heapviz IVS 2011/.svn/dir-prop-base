@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 49
+paper.aux
+paper.bbl
+paper.blg
+paper.dvi
+paper.ps
+
+END

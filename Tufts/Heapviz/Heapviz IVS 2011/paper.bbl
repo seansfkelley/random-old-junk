@@ -1,0 +1,180 @@
+\begin{thebibliography}{10}
+
+\bibitem{blackburn06dacapo}
+Stephen~M. Blackburn, Robin Garner, Chris Hoffmann, Asjad~M. Khang, Kathryn~S.
+  McKinley, Rotem Bentzur, Amer Diwan, Daniel Feinberg, Daniel Frampton,
+  Samuel~Z. Guyer, Martin Hirzel, Antony Hosking, Maria Jump, Han Lee,
+  J.~Eliot, B.~Moss, Aashish Phansalkar, Darko Stefanovi\'{c}, Thomas
+  VanDrunen, Daniel von Dincklage, and Ben Wiedermann.
+\newblock The {DaCapo} benchmarks: {Java} benchmarking development and
+  analysis.
+\newblock In {\em {ACM} Conference on Object-Oriented Programming Systems,
+  Languages, and Applications}, pages 169--190, 2006.
+
+\bibitem{brooks75mythical}
+Frederick~P. {Brooks, Jr.}
+\newblock {\em The Mythical Man-Month}.
+\newblock Addison-Wesley, 1975.
+
+\bibitem{depauw93vis}
+Wim De~Pauw, Richard Helm, Doug Kimelman, and John Vlissides.
+\newblock Visualizing the behavior of object-oriented systems.
+\newblock In {\em {ACM} Conference on Object-Oriented Programming Systems,
+  Languages, and Applications}, pages 326--337, 1993.
+
+\bibitem{depauw99leaks}
+Wim De~Pauw and Gary Sevitsky.
+\newblock Visualizing reference patterns for solving memory leaks in {Java}.
+\newblock In {\em The European Conference on Object-Oriented Programming},
+  pages 116--134, 1999.
+
+\bibitem{depauw98jinsight}
+Wim De~Pauw and John~M. Vlissides.
+\newblock Visualizing object-oriented programs with {Jinsight}.
+\newblock In {\em The European Conference on Object-Oriented Programming},
+  pages 541--542, 1998.
+
+\bibitem{demsky09heap}
+Brian Demsky and Martin Rinard.
+\newblock Automatic extraction of heap reference properties in object-oriented
+  programs.
+\newblock {\em IEEE Transactions on Software Engineering}, pages 305--324,
+  2009.
+
+\bibitem{scaffidi06prefuse}
+Ali~S. Erkan, T.~J. VanSlyke, and Timothy~M. Scaffidi.
+\newblock Data structure visualization with {LaTeX} and {Prefuse}.
+\newblock In {\em ITiCSE '07: Proceedings of the 12th Annual SIGCSE Conference
+  on Innovation and Technology in Computer Science Education}, pages 301--305,
+  New York, NY, USA, 2007. ACM.
+
+\bibitem{ghiya96shape}
+Rakesh Ghiya and Laurie~J. Hendren.
+\newblock Is it a tree, a {DAG}, or a cyclic graph? {A} shape analysis for
+  heap-directed pointers in {C}.
+\newblock In {\em {ACM} Symposium on the Principles of Programming Languages},
+  pages 1--15, 1996.
+
+\bibitem{graphml}
+{Graph Drawing Steering Committee}.
+\newblock The {GraphML} file format, 2010.
+\newblock \url{http://graphml.graphdrawing.org}, Retrieved April 30, 2010.
+
+\bibitem{heer05prefuse}
+Jeffrey Heer.
+\newblock Prefuse: a toolkit for interactive information visualization.
+\newblock In {\em CHI '05: Proceedings of the SIGCHI Conference on Human
+  Factors in Computing Systems}, pages 421--430, 2005.
+
+\bibitem{hill02ownership}
+Trent Hill, James Noble, and John Potter.
+\newblock Scalable visualizations of object-oriented systems with ownership
+  trees.
+\newblock {\em Journal of Visual Languages and Computing}, pages 319--339, June
+  2002.
+
+\bibitem{marron10abstraction}
+Mark Marron, Cesar Sanchez, and Zhendong Su.
+\newblock High-level heap abstractions for debugging programs.
+\newblock 2010.
+\newblock \url{http://software.imdea.org/~marron/papers/publications.html},
+  Retrieved April 30, 2010.
+
+\bibitem{mitchell09yeti}
+Nick Mitchell, Edith Schonberg, and Gary Sevitsky.
+\newblock Making sense of large heaps.
+\newblock In {\em The European Conference on Object-Oriented Programming},
+  pages 77--97, 2009.
+
+\bibitem{hprof}
+Kelly O'Hair.
+\newblock {HPROF}: A heap/{CPU} profiling tool in {J2SE} 5.0, 2004.
+\newblock
+  \url{http://java.sun.com/developer/technicalArticles/Programming/HPROF.html},
+  Retrieved April 30, 2010.
+
+\bibitem{pheng91dynamic}
+Sokhom Pheng and Clark Verbrugge.
+\newblock Dynamic data structure analysis for {Java} programs.
+\newblock In {\em Proceedings of IEEE International Conference on Program
+  Comprehension}, pages 191--201, 2006.
+
+\bibitem{jprobe}
+Quest.
+\newblock {JProbe Memory Debugger}.
+\newblock \url{http://www.quest.com/jprobe/}, Retrieved July 22, 2010.
+
+\bibitem{rayside06ownership}
+Derek Rayside, Lucy Mendel, and Daniel Jackson.
+\newblock A dynamic analysis for revealing object ownership and sharing.
+\newblock In {\em WODA '06: Proceedings of the 2006 International Workshop on
+  Dynamic Systems Analysis}, pages 57--64, 2006.
+
+\bibitem{reichenbach10deal}
+Christoph Reichenbach, , Neil Immerman, Yannis Smaragdakis, Edward~E.
+  Aftandilian, and Samuel~Z. Guyer.
+\newblock What can the {GC} compute efficiently? {A} language for heap
+  assertions at {GC} time.
+\newblock In {\em {ACM} Conference on Object-Oriented Programming Systems,
+  Languages, and Applications}, 2010.
+
+\bibitem{reiss09heap}
+Steven Reiss.
+\newblock Visualizing the {Java} heap to detect memory problems.
+\newblock In {\em VISSOFT '09: Proceedings of the 5th IEEE International
+  Workshop on Visualizing Software for Understanding and Analysis}, pages
+  73--80, 2009.
+
+\bibitem{reiss05jove}
+Steven~P. Reiss and Manos Renieris.
+\newblock Jove: {Java} as it happens.
+\newblock In {\em {ACM} Symposium on Software Visualization}, pages 115--124,
+  2005.
+
+\bibitem{sagiv99shape}
+Mooly Sagiv, Thomas Reps, and Reinhard Wilhelm.
+\newblock Parametric shape analysis via 3-valued logic.
+\newblock In {\em {ACM} Symposium on the Principles of Programming Languages},
+  pages 105--118, 1999.
+
+\bibitem{sevitsky01jinsight}
+Gary Sevitsky, Wim De~Pauw, and Ravi Konuru.
+\newblock An information exploration tool for performance analysis of java
+  programs.
+\newblock In {\em TOOLS '01: Proceedings of the Technology of Object-Oriented
+  Languages and Systems}, page~85, Washington, DC, 2001. IEEE Computer Society.
+
+\bibitem{specjvm98}
+Standard Performance Evaluation Corporation.
+\newblock {\em {{SPEC}jvm98 Documentation}}, release 1.03 edition, 1999.
+
+\bibitem{specjbb2000}
+{Standard Performance Evaluation Corporation}.
+\newblock {\em {SPEC}jbb2000 Documentation}, release 1.01 edition, 2001.
+
+\bibitem{storey95shrimp}
+M.-A.~D. Storey and H.~A. Muller.
+\newblock Manipulating and documenting software structures using shrimp views.
+\newblock In {\em ICSM '95: Proceedings of the International Conference on
+  Software Maintenance}, page 275, Washington, DC, 1995. IEEE Computer Society.
+
+\bibitem{jvmti}
+{Sun Microsystems}.
+\newblock {JVM} tool interface, 2010.
+\newblock \url{http://java.sun.com/javase/6/docs/platform/jvmti/jvmti.html},
+  Retrieved April 30, 2010.
+
+\bibitem{sundararaman08HDPV}
+Jaishankar Sundararaman and Godmar Back.
+\newblock {HDPV: Interactive, faithful, in-vivo runtime state visualization for
+  C/C++ and Java}.
+\newblock In {\em SoftVis '08: Proceedings of the 4th ACM Symposium on Software
+  Visualization}, pages 47--56, New York, NY, USA, 2008. ACM.
+
+\bibitem{zimmerman02memory}
+Thomas Zimmerman and Andreas Zeller.
+\newblock Visualizing memory graphs.
+\newblock {\em Lecture Notes in Computer Science - Software Visualization},
+  2269:533--537, 2002.
+
+\end{thebibliography}

@@ -1,0 +1,17 @@
+red=213,13,13
+purple=140,7,173
+yellow=247,233,4
+blue=7,67,238
+teal=4,215,228
+pink=255,112,112
+lightblue=114,147,242
+separator=\n
+filename=/Users/sk/Documents/schedule.png
+class_size=14
+height=300
+spacing=10
+
+Linear Algebra,BR-P 07,yellow,TR:1030-1145
+Vizualization,Halligan 106,purple,MW:1030-1145
+Programming Languages,Halligan 111A,red,MW:1500-1615
+Big Bang to Humankind,Pearson 104,green,TR:1500-1615

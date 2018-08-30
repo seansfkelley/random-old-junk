@@ -1,0 +1,2 @@
+tr '\r' '\n' < $1 > 'unix-'$1
+python pricer.py 'unix-'$1

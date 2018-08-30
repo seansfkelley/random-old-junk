@@ -1,0 +1,10 @@
+dimensions: 64x64, 4096 pixels total
+time: 0:02:04
+shape count: 9
+camera: <1000, 1000, 1000>
+focus: <0, 0, 0>
+grid distance: 1332.347
+resolution: 1.000
+rotation: 0.000
+
+notes: Fixed the hollow-box problem, and I have no idea how. I rewrote a small part of the terrain generation function, because I thought I had narrowed down the error to there. The rewritten part was the same as the original. I added something, it worked, I took it out as a test, and it still worked. I suspect the problem was IDLE remembering variables from previous executions of the program, but now multiple execution in the same process don't mess it up. I don't know, but I'm not complaining.

@@ -1,0 +1,10 @@
+dimensions: 512x512, 262144 pixels total
+time: 4:09:59
+shape count: 22
+camera: <-750, 1000, 2000>
+focus: <0, 0, 0>
+grid distance: 589.624
+resolution: 2.000
+rotation: 0.000
+
+notes: A simple test of double-reflection. I've apparently forgotten to put the 'shade' multiplier back in after reducing it back to one light source.

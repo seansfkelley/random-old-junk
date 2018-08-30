@@ -1,0 +1,10 @@
+dimensions: 128x128, 16384 pixels total
+time: 0:1:16
+shape count: 1
+camera: <2000, 2000, 2000>
+focus: <0, 0, 0>
+grid distance: 2309.401
+resolution: 2
+rotation: 0.000
+
+notes: Fixed the glitch that made the cubes' surfaces render incorrectly! Rounding error so small that it didn't even get printed for debugging was the problem. Added a couple round() statements to counteract this.

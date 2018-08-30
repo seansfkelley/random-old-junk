@@ -1,0 +1,10 @@
+dimensions: 128x128, 16384 pixels total
+time: 0:30:14
+shape count: 22
+camera: <-750, 1000, 2000>
+focus: <0, 0, 0>
+grid distance: 1179.248
+resolution: 1.000
+rotation: 0.000
+
+notes: Just a quick retry of the previous render to make sure the shading still works correctly - it does. The next step is to get rid of that weird stretch, it seems to go in and out of existence.

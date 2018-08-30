@@ -1,0 +1,36 @@
+digraph linkedlist {
+  //ranksep=1.25;
+
+  // head
+  A [label="LinkedList"];
+
+  // nodes
+  B [label="LinkedList$Entry"];
+  C [label="LinkedList$Entry"];
+  D [label="LinkedList$Entry"];
+  E [label="LinkedList$Entry"];
+
+  // data
+  F [label="T"];
+  G [label="T"];
+  H [label="T"];
+  I [label="T"];
+
+  A -> B [label="head"];
+  A -> E [label="tail"];
+
+  B -> F [label="entry"];
+  B -> C [label="next"];
+  C -> G [label="entry"];
+  C -> D [label="next"];
+  C -> B [label="previous"];
+  D -> H [label="entry"];
+  D -> E [label="next"];
+  D -> C [label="previous"];
+  E -> I [label="entry"];
+  E -> D [label="previous"];
+
+  { rank=source; A }
+  { rank=same; B; C; D; E }
+  { rank=sink; F; G; H; I }
+}

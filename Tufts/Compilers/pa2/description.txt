@@ -1,0 +1,22 @@
+Sean Kelley and Walker Holahan
+
+Comments were implemented with a second COMMENT state that the lexer would enter upon reading the 2-character /* comment
+beginning. It consumes characters from the input until it reaches either another /* or a */. A global variable tracks the
+depth of nested comments; /* increases the depth by one and */ decreases it. The lexer is in the COMMENT state only while
+the depth is positive (it's always nonnegative: a */ read while not in the COMMENT state is interpreted as two tokens).
+When a */ is read that reduces the depth back down to zero (i.e. is the last closing statement), the lexer continues to
+behave as normal.
+
+Error reporting was done primarily by using "backup" regular expressions that trigger when an earlier regular expression
+almost matched but instead produced some illegal sequence. For instance, a string literal that includes an illegal escape
+sequence passes through the regular expression that captures strings and instead is caught by the one that is very similar,
+but also allows any type of escape character. At this point an error is thrown: in this way, a small typo that doesn't
+affect the syntax of the following statements can be accurately identified without throwing off the rest of the lexing
+process.
+
+A similar process is used to identify illegal characters in the input: anything not caught by any valid regular expression
+is assumed to be illegal.
+
+Lastly, the EOF function was modified to look at the current comment depth, which should be zero. If it is nonzero, then
+the lexer is currently in the middle of the comment which, while not technically invalid, is certainly an accident on the
+programmer's part and so is warned about.

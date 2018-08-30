@@ -1,0 +1,9 @@
+ignore match (i.e. dont cover) if alternates fail and there is no default
+better, expansible way to pass around match parameters (other than series of bools)
+
+bonus functionality:
+detect if the molfile is invalid (namely wrong numbers for atom/bond counts)
+use lowercase for atomic symbols
+silent/verbose/debug modes for printing
+change matchinfo to a class, integrate comparison, matches as indices functions
+error checking in add_hydrogen for invalid molecules

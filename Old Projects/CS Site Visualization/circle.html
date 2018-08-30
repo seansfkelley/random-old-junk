@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <title>Circle-fan Layout</title>
+    <script type="text/javascript" src="./CS_Site/protovis-r3.2.js"></script>
+    <script type="text/javascript" src="./CS_Site/collaboration data duplicated.js"></script>
+    <style type="text/css">
+
+body {
+  margin: 0;
+}
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript+protovis">
+
+var w = document.body.clientWidth,
+    h = document.body.clientHeight,
+
+    // Tweak these parameters to modify the size of the visualization's LAYOUT. Do not otherwise
+    // mess with anything involving layout. Tweak appearances in the usual places.
+    diameter = Math.min(h / 5, w / 5),
+    depth = 35,
+    breadth = 5,
+
+    dept_color = pv.color("rgba(32, 67, 131, 0.1)"),
+    person_color = pv.color("rgba(255, 160, 13, 0.1)"),
+
+    person_dept_color = pv.color("rgba(32, 67, 131, 0.2)"), 
+    person_person_color = pv.color("rgba(255, 160, 13, 0.2)");
+
+// Takes a professor's name, then creates a object/hashmap that maps departments that professor
+// has collaborated with onto the value 'true'. The mapped value can be anything as long as it is
+// not false when considered as a boolean.
+function as_tree(professor){
+    var tree = {};
+    for (var i = 0; i < data.links.length; ++i){
+        if (data.nodes[data.links[i].source].nodeName == professor && !data.nodes[data.links[i].target].is_person){
+            tree[data.nodes[data.links[i].target].nodeName] = true;
+        }
+    }
+    return tree;
+}
+
+var vis = new pv.Panel()
+    .width(w)
+    .height(h)
+    .fillStyle("white")
+    .event("mousedown", pv.Behavior.pan())
+    .event("mousewheel", pv.Behavior.zoom(0.5));
+
+// crossings is the center-circle part of the visualization that shows professor-professor
+// collaborations via criss-crossing lines (hence the name).
+var crossings = vis.anchor("top").add(pv.Layout.Arc)
+    .nodes(data.nodes.filter(function(d) d.is_person))
+    .links(data.links.filter(function(d) d.person_person_link))
+    .orient("radial")
+    .width(diameter)
+    .height(diameter)
+    .left((w - diameter) / 2)
+    .top((h - diameter) / 2)
+    .sort(function(a, b) a.nodeName.split(" ")[1] > b.nodeName.split(" ")[1])
+
+crossings.link.add(pv.Line)
+    .strokeStyle(person_person_color);
+
+/*
+// This function is used to trick the layout into aligning the tree branching from each professor
+// to the departments they collaborate with correctly. It is the reason that the visualization's layout
+// size should be controlled from the global variables up top. It takes a pv.Dom.Node that is the root
+// of what will become a professor's department tree and an (x, y) coordinate pair that describes
+// where this professor's node is in space. It is assumed that (0, 0) is the topleft corner of the
+// diameter*diameter sized box that bounds the middle part of the visualization. Then, since Protovis 
+// does not have rotations in pv.Transform, it appends many empty pv.Dom.Nodes to the end of the node's
+// list until it deems that this has forced the layout manager to rotate the meaningful nodes into proper
+// position (so that it is going outward relative to the center of the circle). It does this calculation
+// based on the (x, y) position and the diameter/depth/breadth global variables. This is the reason the
+// visualization is slow to perform panning and zooming. This is also the reason that as_tree has to map
+// professor names onto non-false values.
+function append_nodes(dom_root, x, y){
+    var angle = Math.atan2(y - diameter / 2, diameter / 2 - x) + Math.PI;
+    var tick_size = breadth / (2 * depth); // Derived from: Math.PI / (2 * Math.PI * depth / breadth);
+
+    for (var t = 0; t < angle; t += tick_size){
+        dom_root.appendChild(new pv.Dom.Node(undefined));
+    }
+    return dom_root;
+}
+
+// Add the label display for the crossings part of the visualization, then for each label, attach an
+// entire tree that shows the departments the professor has collaborated with. Align this tree (since
+// Protovis won't let you do you it the normal way) by using append_nodes.
+crossings.label.add(pv.Label)
+    .textAlign(function(l) this.left() <= diameter / 2 ? "left" : "right")
+    .anchor("center")
+    .add(pv.Panel)
+    .add(pv.Layout.Tree)
+    .depth(depth)
+    .breadth(breadth)
+    .left(function() -this.parent.width())
+    .top(function() -this.parent.height())
+    .nodes(function(n) append_nodes(pv.dom(as_tree(n.nodeName)).root(n.nodeName).sort(function(a, b) a.nodeName < b.nodeName), this.parent.left(), this.parent.top()).nodes())
+    .orient("radial")
+    .label.add(pv.Label)
+    .visible(function(l) l.parentNode)
+    .parent
+    .link.add(pv.Line)
+    .strokeStyle(person_dept_color)
+    .visible(function(x, l) l.sourceNode.nodeValue);
+*/
+
+vis.render();
+
+    </script>
+  </body>
+</html>

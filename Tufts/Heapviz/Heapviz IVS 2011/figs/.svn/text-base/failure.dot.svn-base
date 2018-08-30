@@ -1,0 +1,22 @@
+digraph linkedlist {
+
+  A [label="Customer"];
+  B [label="Customer"];
+  C [label="Customer"];
+  D [label="Customer"];
+
+  E [label="Order"];
+  F [label="Order"];
+  G [label="Order"];
+  H [label="Order"];
+
+  A -> E;
+  B -> F;
+  C -> G;
+  D -> H;
+  E -> A;
+  F -> B;
+  G -> C;
+  H -> D;
+
+}

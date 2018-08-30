@@ -1,0 +1,167 @@
+Sean Kelley (sean.kelley@tufts.edu)
+Sarah Nolet (sarah.nolet@tufts.edu)
+
+UM Design
+-------------------------------------------------------------------------------
+
+The state of the UM is represented by two data structures. A UM_memory struct
+(explained in detail later) representing the UM's arrays, and a UM_state struct
+containing the registers and program counter.
+
+The UM has several typedefs that are used throughout. These are:
+UM_word: a 32-bit unsigned.
+UM_reg_index: an 8-bit unsigned; should only ever contain 0-7 (register index).
+UM_opcode: an 8-bit unsigned represnting the current instruction's code.
+
+The registers are represented together as follows:
+
+struct UM_state{
+  UM_word *registers;   // Length 8, always.
+  UM_reg_index A, B, C; // Which registers are selected by the currently
+                        // executing instruction.
+  UM_word program_counter;
+};
+
+UM_state has no accompanying functions, it is the the responsibility of the
+owner to manage it (including initializing and freeing it).
+
+The main driver function of the UM will perform these actions:
+1 Loop through the instruction stream in the zeroth array by incrementing the
+    program counter, and do the following actions:
+2 Decode the instruction pointed to by the program counter, setting the A, B,
+    C indices of the UM_state as appropriate.
+3 Call the function that corresponds to the opcode in the instruction, passing 
+    in the register state structure and the memory state structure.
+
+The two state variables (a UM_memory, and a UM_state) are stored locally by the
+UM's driver function, though it optionally accepts already-initialized values 
+for these.
+
+A separate function will be used to read in an instruction stream from a file,
+initialize a UM_memory with the instructions in the zeroth array, initialize a
+UM_state by setting all registers and the program counter to zero, and starting
+the UM running.
+
+A UM instruction defines a corresponding C function. There are exactly 14 of
+these functions, and they all take the same parameters (UM_memory, UM_state) 
+and return void. The format is as follows:
+
+void function_name(struct UM_memory *memory, struct UM_state *state);
+
+The 14 functions will be stored in an array, indexed by their opcode.
+
+UM Invariants:
+- The UM_memory structure has its own invariants, see below.
+- The program counter always points to the currently executing instruction.
+- The UM_state members A, B, C correspond to the register numbers given in
+    the currently executing instruction.
+- The 'registers' member of the UM_state will always contain exactly
+    eight registers (i.e. UM_words).
+
+UM Arrays
+-------------------------------------------------------------------------------
+
+To represent memory that the UM will use, we have chosen to use a 2D array
+composed of Hanson's sequence holding different-sized C arrays of 32-bit words.
+This array will be held in a UM_memory structure along with a stack (sequence)
+tracking previously-inactivated slots for reuse as well as a third sequence
+storing the lengths of C arrays (for duplication purposes).
+
+Defined in the memory module header:
+
+struct UM_memory{
+  Seq_T c_arrays;    // Each element is an array created by an activate-
+                     // array instruction.
+  Seq_T empty_slots; // A queue that tracks previously-inactivated slots.
+  Seq_T lengths;     // lengths[i] is the length of c_arrays[i].
+};
+
+The UM_memory module defines five lower-level functions - i.e. ones that do not
+operate with the UM_state, only the UM_memory itself and other parameters as 
+necessary. These five functions are used by the five corresponding wrapper 
+functions (which interpret the UM_state for the lower-level functions) that are 
+part of the aforementioned array of instruction-functions.
+
+The module also defines a new and a free function for the struct.
+
+UM_memory Invariants
+- The zeroth C array contains the instructions for the currently executing 
+    program.
+- Once allocated, a particular instance of a C array will never change size;
+    this property is stored in lengths.
+- The empty_slots member lists all the previously-activated but currently-
+    inactive C arrays, or is empty if there are none (i.e. the next allocation
+    will add to c_arrays).
+- If an array is inactive, its slot in c_arrays will be a null pointer and its
+    slot in lengths will be zero.
+- The length of c_arrays is always the same as lengths'.
+
+Note: The unit tests included with this design document compile and run (with
+the included UM_memory implementation and compile script).
+
+UM Instruction Unit Tests
+-------------------------------------------------------------------------------
+1 Halt/Output: The test will attempt to output (implicitly, this will be zero,
+    since registers default to zero), halt, and then output. If exactly one
+    output results (i.e. the first, but not the last), the test is passed.
+
+2 Load Value: Load a value and output it. Make sure they are the same.
+
+3 Input: Input a value, output that same value. Make sure they are same.
+
+4 Conditional Move: Load 2 registers A, B, with different values. Load another
+    register, C, with zero. Perform a conditional move, testing C and moving
+    from B to A. Output A, and make sure it has retained its original value.
+    Load C with a nonzero value, and perform the same operations. Output should
+    now be equal to B (since A will have been set to B).
+
+5 Add: Load two nonzero values into registers, add them, and output the result.
+    Make sure it is the sum.
+
+6 Multiply: Analagous to add, except with multiplication. Do not load registers
+    with zero or one.
+
+7 Divide: Load two values, one a multiple of the other. Divide the larger by
+    the smaller, output the result, and make sure it is the correct result.
+    Load two more values, the smaller of which does NOT evenly divide the
+    larger. Perform division, output the result, and make sure it is the
+    correct result of an integer division (i.e. 6 / 4 = 1).
+
+8 Bitwise NAND: Load two registers with zero, NAND them, and make sure the
+    result is all ones. Load one with the value one, NAND them, and make sure
+    the result is again all ones. Lastly, load both registers with one, NAND
+    them, and make sure the result is all ones, except the least-significant
+    bit, which should be zero. This test only explicitly tests the least
+    significant bit, but it is reasonable to assume the behavior extends to
+    higher bits (especially since, in order to pass this test, the higher bits
+    must become ones, as bitwise NAND's specification dictates).
+
+9 Activate Array: Activate an array. Output the returned array index, and make
+    sure it is nonzero.
+
+10 Inactivate Array: Activate an array and store the index. Inactivate it, and
+    then activate again. According to our implementation, the new array index
+    and the stored array index should be identical.
+
+11 Array Index: Activate an array of size one. Retreive the only value in the
+    array via indexing, and check that is is zero (as it should be initialized
+    to) by outputting it.
+
+12 Array Update: Activate an array. Update a particular index in it to some
+    nonzero value. Retreive the value, and make sure it is the same.
+
+13 Load Program: This is best shown in pseudocode:
+
+1 load program, 0 (array index), 3 (element)
+2 output
+3 halt
+
+This test should output nothing, as it should skip over the output line.
+
+1 output
+2 activate and store the new array index
+3 [load this new array with the output and halt instructions at lines 1 and 5]
+4 load program [array index], 0
+5 halt
+
+This test should output exactly two items (of value zero).

@@ -1,0 +1,10 @@
+dimensions: 512x512, 262144 pixels total
+time: 9:22:56
+shape count: 22
+camera: <1500, 1000, -500>
+focus: <0, 0, 0>
+grid distance: 935.414
+resolution: 7.000
+rotation: 0.000
+
+notes: Just a higher-res image to see what it would look like. It's nice to see after so many 64x64 ones.

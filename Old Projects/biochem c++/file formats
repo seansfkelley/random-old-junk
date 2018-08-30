@@ -1,0 +1,77 @@
+-------------------------------------------------------------------------MOLFILE
+
+num_atoms num_bonds
+
+filler filler filler atom_1_type
+...
+filler filler filler atom_n_type
+
+bond_1_first_index bond_1_second_index bond_1_strength
+...
+bond_n_first_index bond_n_second_index bond_n_strength
+
+NOTES:
+'filler' is maintained for compatibility and is not used
+the atom type must be given as the symbol for the element (e.g. H, He...) or a
+    question mark (?) for wildcard
+blank lines are allowed (but can contain NO characters whatsoever)
+1-indexed
+
+---------------------------------------------------------------------------.SMOL
+
+num_atoms num_bonds num_variants
+
+atom_1_type atom_1_charge atom_1_config_1 ... atom_1_config_m
+...
+atom_n_type atom_n_charge atom_n_config_1 ... atom_n_config_m
+
+bond_1_first_index bond_1_second_index bond_1_strength
+...
+bond_n_first_index bond_n_second_index bond_n_strength
+
+M DEFAULT priority energy_value
+M ALTERNATE priority modifier index energy_value exclusive_1 ... exclusive_n
+M MODIFIER name
+M NOBOND
+M CORRECTION
+
+NOTES:
+num_variants is the number of different configurations that are given (m)
+the config values are optional values to indicate configuration of membership
+    in the matching given group; must match the number of occurences exactly (see index)
+    * indicates that it doesnt matter whether the corresponding atom is in the
+    structure or not (0 or more), + indicates membership of any amount (1 or more)
+    these two values allow attached structures of the same type to still match
+    each individually rather than neither (useful with rings, fused rings)
+    groups that have symmetric structure but asymmetric values (wildcards included)
+    should have configs for all possible versions of the symmetry
+DEFAULT indicates the default energy (no modifying structures)
+priority indicates the match priority for this variant, lower is better
+energy_value can be decimal
+modifier is the name of the modifier group associated with the given value, i.e.
+    BENZENE
+index indicates which configuration of membership in the modifier group the
+    given energy matches (the indices also serve to prioritize the assignments, lowest first)
+exclusive indicates that specified values (not * or +) for the config can't have the
+    given tag
+name is the name this modifier group has, it is the string that appears as the
+    'modifier' argument in other files
+NOBOND indicates that the bond strengths should be ignored when matching and should
+    only be used when specifying generic modifer structures
+CORRECTION indicates the structure should be matched and the default energy assigned
+    immediately, then discarded (CORRECTION and MODIFIER are NOT mutually exclusive)
+any flags, indicated by a leading 'M', are optional
+any wildcards that exist in a modifier structure WILL be tagged with that modifier
+
+--------------------------------------------------------------------------FGROUP
+
+DIRECTORY dir
+fgroup_filename_1 fgroup_1_priority
+...
+fgroup_filename_n fgroup_n_priority
+
+NOTES:
+DIRECTORY indicates that the following files (up to EOF or another DIRECTORY) are
+    in 'dir'; it defaults to the current directory
+the priorities dictate precendence when assigning a final layout of matches to
+    atom (covering), lower means earlier

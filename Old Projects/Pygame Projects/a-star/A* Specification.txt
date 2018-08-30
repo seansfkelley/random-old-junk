@@ -1,0 +1,18 @@
+A* Search Structure Requirements/Interface
+
+AStarSearch has self.map attribute
+
+self.map has:
+	reset_for_search() # does any initialization for new search
+	locate(logical_coords_tuple) # returns the node containing the given logical coordinates
+	find_adjacent(node) # returns a list of orthagonally adjacent nodes
+
+node needs to have:
+	astar_status # new, open, closed 
+	astar_dist_travel # real distance traveled to this point
+	astar_dist_remain # estimated remaining distance to goal
+	astar_score # sum of real + estimated distances
+	astar_parent # parent in current possible solution
+	
+	estimated_distance(to_node)
+	real_distance(to_node)

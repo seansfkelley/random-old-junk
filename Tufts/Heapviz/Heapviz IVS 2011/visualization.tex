@@ -1,0 +1,90 @@
+
+%%!TEX root = ./heapvis.tex
+
+\section{Heap Visualization}
+\label{visualization}
+
+Given a heap abstraction in GraphML format from the analyzer described 
+in Section~\ref{analysis}, Heapviz creates an interactive force-directed 
+layout.  The goals of the visualization are to create (1) an intuitive 
+display of summarized heap data, and (2) an interactive environment where 
+heap data can be easily explored.  Heapviz builds upon the Prefuse 
+toolkit~\cite{heer05prefuse}.  Our implementation focuses on facilitating 
+program understanding and debugging.
+
+\subsection{Graph Display}
+
+\subsubsection{Force-Directed Layout}
+
+We selected force-direction as the layout algorithm because heap abstractions 
+may be arbitrary graphs.  From our experience with the prior iteration of 
+Heapviz~\cite{aftandilian10heapviz}, we learned that enforcing a tree structure 
+on the heap abstraction was counterproductive. \todo{why?}
+Instead, force-direction minimizes edge crossings in the graph (i.e., makes 
+it as planar as possible) to make the structure clear to the user.  In our 
+experience, heap abstractions tend to be planar, near-planar, or can become 
+planar with minimal work from the user.
+
+Efficient use of screen space is important, as even after summarization the 
+graph may contain several hundred nodes.  Force-direction strikes a balance 
+between maximizing screen space usage and preserving the inherent structure 
+of the heap abstraction.
+
+\subsubsection{Visual Encoding}
+
+Instead of relying on a dense visual encoding to convey information to the 
+user, Heapviz displays the bare minimum of expected visual properties and 
+relies on the user to modify the graph to suit his own individual needs 
+through the many interactions that are provided.
+ 
+Visual encoding of the graph focuses primarily on node size, labels, and color.
+The schemes that control each of these properties can be selected by the user. 
+Node size may be constant, a function of the node's size in bytes, or a 
+function of the number of represented instances. Labels display the type
+of each object. Color carries many different meanings, including 
+differentiating user-defined node groups (see Section~\ref{groups}), 
+selected nodes, and nodes being hovered over. 
+
+\subsection{Interaction}
+
+Heapviz depends on rich interactions to make sense of complex heap data. All the
+interactions can be grouped into three major categories: graph display, groups,
+and query and selection.  All three types provide a method to quickly examine 
+the member variables of nodes through tooltips in their respective GUI elements.
+
+The supplemental video demonstrates how the user can interact with
+Heapviz.  Because our work relies on the user's being able to explore the
+graph interactively, we recommend that the reader view the video to have
+a better understanding of how Heapviz works and how it can be used.
+
+\subsubsection{Graph Display}
+
+Heapviz supports many of the interactions one would expect from an interactive node-edge
+display in order to make adapting to and using Heapviz as easy and fluid as possible.
+Among these are the ability to pan, zoom, drag nodes and bring up context menus.  We support node 
+selection in a variety of ways, including selecting singly, in an area,
+or based on reachability from given source nodes.  The user is able to tweak the physics
+simulation to suit the nature of the graph by modifying the simulation parameters through 
+sliders.  Edges currently do not support any interactions.
+
+\subsubsection{Groups}
+\label{groups}
+
+Once selected, nodes can be put into groups.  This helps the user classify nodes in a
+meaningful way, extended existing interaction modes with further semantic information
+and allowing many new interactions.  For each group, the user can hide it (to reduce 
+clutter), color it (for easy identification) or combine it with other groups (union, 
+intersection).  Groups provide a familiar and robust framework for adding new interactions 
+or augmenting existing ones.
+
+\subsubsection{Query and Selection}
+
+Nodes carry a large amount of information on the examined program's state. Heapviz provides
+a simple, yet powerful query language to harness that information, helping the user find and 
+select nodes that satisfy the query. The language supports querying based on 
+structure alone (e.g., \texttt{degree() > 3}), member variables of the represented objects 
+(e.g., \texttt{my\_boolean == false}), type or package information of the objects 
+(e.g., \texttt{type() == "HashMap"} or \texttt{package() == "java.lang"}), or using group information 
+(e.g., \texttt{ingroup("group1")}). Queries can be chained together to create more complex ones, 
+allowing the user the flexibility and power to pinpoint the nodes of interest and 
+to create any desired intermediate groups.

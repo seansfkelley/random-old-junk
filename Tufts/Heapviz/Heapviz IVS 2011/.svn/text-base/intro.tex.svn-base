@@ -1,0 +1,75 @@
+
+%%!TEX root = ./heapvis.tex
+
+\section{Introduction}
+ 
+\begin{flushright}
+%\begin{quote}
+\textit{Show me your flowcharts and conceal your tables,
+and I shall continue to be mystified. 
+Show me your tables, and I won't usually need your flowcharts; they'll
+be obvious.}\\
+ -- Fred Brooks~\cite{brooks75mythical}
+ %\end{quote}
+\end{flushright}
+
+
+Understanding modern software has become a significant challenge, even for
+expert programmers. Part of the problem is that today's programs are larger and
+more complex than their predecessors, in terms of static code base (lines of
+code), runtime behavior, and memory footprint. Another problem is that modern
+applications, such as web-based e-commerce and cloud computing platforms, are
+constructed by assembling reusable software components, ranging from simple
+container classes to huge middleware frameworks. In many cases, these
+components are instantiated dynamically and wired together using techniques
+such as reflection or bytecode rewriting. These features
+make it very challenging for any one programmer to obtain a global
+understanding of the program's state and behavior.
+
+The size and complexity of software is also a major impediment to program
+understanding tools, particularly those based on static analysis of the code. 
+The programming techniques described above  
+often result in very imprecise information that is of little
+value to the programmer. Tools that analyze the dynamic behavior of programs
+have traditionally focused on identifying performance problems rather than on
+general program understanding~\cite{jprobe,sevitsky01jinsight,hprof}.  The
+primary technique currently available for inspecting program state is the
+debugger, which is extremely painful to use for anything but the smallest data
+structures. 
+
+In this paper we present a new tool called \emph{Heapviz} that is capable of
+effectively visualizing heap snapshots obtained from running Java programs.  By
+visualizing the actual contents of the heap, we avoid the drawbacks 
+of static analysis tools: the problems caused by dynamic
+software architectures and the inaccuracy of heap
+approximation. The main challenge of our approach is the scale of the data: even a modest program can contain an enormous number of objects. We visualize the
+heap as a graph in which nodes
+represent objects and edges represent pointers (object references)
+between them. Our work leverages the Prefuse visualization
+toolkit~\cite{heer05prefuse}, which provides a rich set of software tools for
+building interactive visualizations.  Unlike traditional debuggers, Heapviz 
+provides a global view of the data together with powerful interactive 
+capabilities.
+
+Our solution involves two techniques. First, we introduce algorithms for
+aggregating and abstracting individual objects to create a more succinct
+summary of the heap. For example, we might display all the elements of a large
+container using a single representative element. Second, we implement an 
+interactive visualization that allows the user to (a) inspect individual 
+objects and field values, (b) search for objects based on type and field 
+values, (c) group 
+objects and hide/show/color the groups, and (d) explore the connectivity of 
+the object graph.  
+
+We demonstrate Heapviz on both constructed examples and real-world Java
+benchmark programs to evaluate its effectiveness as a tool for 
+helping programmers
+visualize and navigate large, pointer-based data structures at both
+whole-program and individual data structure scales.
+This ability could greatly increase programmer productivity in many
+aspects of software construction and maintenance, including finding bugs and
+memory leaks, identifying opportunities to improve data structures,
+understanding the overall system architecture and interaction between software
+components, and helping new members on a development team come up to speed on
+the code quickly.
+

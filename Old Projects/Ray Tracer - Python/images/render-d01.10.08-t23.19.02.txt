@@ -1,0 +1,10 @@
+dimensions: 128x128, 16384 pixels total
+time: 0:06:55
+shape count: 11
+camera: <250, 400, 1000>
+focus: <-32, 16, 0>
+grid distance: 552.834
+resolution: 2.000
+rotation: 0.000
+
+notes: Better test of light dropoff. It doesn't look like it worked, but it did. The change is very small (2 or 3 of 255 per block), so in larger situations it should fade well.

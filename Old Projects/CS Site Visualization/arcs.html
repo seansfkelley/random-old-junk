@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Arc Layout</title>
+    <script type="text/javascript" src="./CS_Site/protovis-r3.2.js"></script>
+    <script type="text/javascript" src="./CS_Site/collaboration data.js"></script>
+    <style type="text/css">
+
+body {
+  margin: 0;
+}
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript+protovis">
+
+var w = document.body.clientWidth,
+    h = document.body.clientHeight,
+    //             Color for a department.           Color for a person.
+    node_colors = [pv.color("rgba(32, 67, 131, 0.1)"), pv.color("rgba(255, 160, 13, 0.1)")],
+    //             Person-department link color.    Person-person link color.
+    link_colors = [pv.color("rgba(32, 67, 131, 0.2)"), pv.color("rgba(255, 160, 13, 0.2)")],
+    drag_color = pv.color("rgba(100, 100, 100, 0.4)"),
+    num_people = data.nodes.filter(function(d) d.is_person).length,
+    num_depts = data.nodes.length - num_people;
+
+var vis = new pv.Panel()
+    .width(w)
+    .height(h)
+    .fillStyle("white")
+    .event("mousedown", pv.Behavior.pan())
+    .event("mousewheel", pv.Behavior.zoom(0.5));
+
+var arc = vis.add(pv.Layout.Arc)
+    .nodes(data.nodes.filter(function(d) d.is_person))
+    .links(data.links.filter(function(d) d.person_person_link))
+    .orient("right");
+
+arc.label.add(pv.Label)
+    .text(function(d) d.nodeName)
+    .left(w / 4)
+    .font("14px Optima")
+    .textAlign("center");
+
+arc.link.add(pv.Line)
+    .left(w / 4)
+    .strokeStyle(function(n, l) link_colors[l.person_person_link ? 1 : 0]);
+
+vis.add(pv.Label)
+    .data(data.nodes.filter(function(d) !d.is_person))
+    // +6 because it's half of the line height (12pt).
+    .top(function(d) (this.index + 0.5) * (h / num_depts) + (6 / this.scale))
+    .left(3 * w / 4)
+    .text(function(d) d.nodeName)
+    .font("12px Optima")
+    .textAlign("left");
+
+vis.add(pv.Panel)
+    .data(data.links.filter(function(d) !d.person_person_link))
+    .add(pv.Line)
+    .data([0, 1])
+    .left(function(t, d) t == 0 ? w / 4 : 3 * w / 4)
+    .top(function(t, d) t == 0
+        ? (d.source + 0.5) * (h / num_people)
+        : (d.target + 0.5 - num_people) * (h / num_depts))
+        // We subtract the number of people because all the departments' indices
+        // are offset by that number, since they follow people in the dataset.
+    .strokeStyle(link_colors[0]);
+
+vis.render();
+
+    </script>
+  </body>
+</html>

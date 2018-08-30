@@ -1,0 +1,20 @@
+red=213,13,13
+purple=140,7,173
+yellow=247,233,4
+blue=7,67,238
+teal=4,215,228
+pink=255,112,112
+light blue=114,147,242
+separator=\n
+filename=/Users/sk/Documents/schedule.png
+class_size=14
+height=500
+spacing=10
+
+Discrete Math,Halligan 111A,red,TR:1630-1745
+Genetic Algorithms,Sci Tech 135,purple,MW:1030-1145
+Calculus II,BR-P 101,yellow,TRF:1200-1250
+Philosophy,BR-P 07,green,TR:1500-1615
+Psychology\nDepartment,,teal,MW:1430-1700,T:1100-1200,R:1030-1200,F:1300-1400
+Biochem Meeting,Sci Tech 272,pink,T:900-1100
+Biochem Reading,Halligan,pink,R:930-1030

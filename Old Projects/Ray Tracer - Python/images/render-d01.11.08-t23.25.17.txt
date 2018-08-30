@@ -1,0 +1,10 @@
+dimensions: 64x64, 4096 pixels total
+time: 0:42:12
+shape count: 100
+camera: <1000, 1000, 1000>
+focus: <0, 0, 0>
+grid distance: 1154.701
+resolution: 0.750
+rotation: 0.000
+
+notes: I had forgotten to multiply indexes by the block size, so each was exactly one unit from the next. Now, the slight hill shape can be seen, but for some reason the tops of all but the highest prism are missing.

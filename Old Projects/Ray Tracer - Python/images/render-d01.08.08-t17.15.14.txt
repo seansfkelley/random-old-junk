@@ -1,0 +1,10 @@
+dimensions: 128x128, 16384 pixels total
+time: 0:11:37
+shape count: 11
+camera: <750, 500, 2000>
+focus: <0, 0, 0>
+grid distance: 548.435
+resolution: 0.500
+rotation: 0.000
+
+notes: First test of multiple light sources. It seems to work, but I know it doesn't: the method used averages ALL light source together, which must be wrong. If there's a cube with two light sources on opposite sides, one of said sides will be 100% illunimated by one source and 0% by the other. Averaging these to 50% doesn't make sense.

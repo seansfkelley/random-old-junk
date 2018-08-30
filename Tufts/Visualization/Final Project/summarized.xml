@@ -1,0 +1,103 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns">
+<graph edgedefault="undirected">
+
+<!-- data schema -->
+<key id="name" for="node" attr.name="name" attr.type="string"/>
+
+<!-- nodes -->
+<node id="n_167">
+    <data key="name">167 | double[] | 20 | S | card-3</data>
+</node>
+<node id="n_148">
+    <data key="name">148 | MathVector | 20 | S</data>
+</node>
+<node id="n_66">
+    <data key="name">66 | Body | 20 | S</data>
+</node>
+<node id="n_183">
+    <data key="name">183 | java.util.Vector | 1 | S</data>
+</node>
+<node id="n_182">
+    <data key="name">182 | double[] | 20 | S | card-3</data>
+</node>
+<node id="n_187">
+    <data key="name">187 | double[] | 8 | S | card-3</data>
+</node>
+<node id="n_186">
+    <data key="name">186 | MathVector | 8 | S</data>
+</node>
+<node id="n_185">
+    <data key="name">185 | Cell java.util.Vector java.lang.Object[] | 24 | T | card-=0+</data>
+</node>
+<node id="n_184">
+    <data key="name">184 | java.lang.Object[] | 1 | S | card-20</data>
+</node>
+<node id="n_0">
+    <data key="name">0 | BTree | 1 | S</data>
+</node>
+<node id="n_226">
+    <data key="name">226 | double[] | 1 | S | card-3</data>
+</node>
+<node id="n_227">
+    <data key="name">227 | java.lang.String[] | 1 | S | card-0</data>
+</node>
+<node id="n_2">
+    <data key="name">2 | java.lang.Object[] | 1 | S | card-20</data>
+</node>
+<node id="n_1">
+    <data key="name">1 | java.util.Vector | 1 | S</data>
+</node>
+<node id="n_225">
+    <data key="name">225 | MathVector | 1 | S</data>
+</node>
+<node id="n_69">
+    <data key="name">69 | MathVector | 20 | S</data>
+</node>
+<node id="n_70">
+    <data key="name">70 | double[] | 20 | S | card-3</data>
+</node>
+<node id="n_71">
+    <data key="name">71 | MathVector | 20 | S</data>
+</node>
+<node id="n_72">
+    <data key="name">72 | double[] | 20 | S | card-3</data>
+</node>
+<node id="n_73">
+    <data key="name">73 | MathVector | 20 | S</data>
+</node>
+<node id="rootJavaFrame-200000-1">
+    <data key="name">rootJavaFrame-200000-1</data>
+</node>
+<node id="rootJavaFrame-200000-0">
+    <data key="name">rootJavaFrame-200000-0</data>
+</node>
+<!-- connections -->
+<!-- edges -->
+<edge source="rootJavaFrame-200000-1" target="n_0"></edge>
+<edge source="rootJavaFrame-200000-1" target="n_227"></edge>
+<edge source="rootJavaFrame-200000-0" target="n_0"></edge>
+<edge source="n_0" target="n_1"></edge>
+<edge source="n_0" target="n_183"></edge>
+<edge source="n_0" target="n_185"></edge>
+<edge source="n_0" target="n_225"></edge>
+<edge source="n_1" target="n_2"></edge>
+<edge source="n_183" target="n_184"></edge>
+<edge source="n_185" target="n_185"></edge>
+<edge source="n_185" target="n_185"></edge>
+<edge source="n_185" target="n_185"></edge>
+<edge source="n_185" target="n_186"></edge>
+<edge source="n_185" target="n_66"></edge>
+<edge source="n_225" target="n_226"></edge>
+<edge source="n_2" target="n_66"></edge>
+<edge source="n_184" target="n_66"></edge>
+<edge source="n_186" target="n_187"></edge>
+<edge source="n_66" target="n_69"></edge>
+<edge source="n_66" target="n_71"></edge>
+<edge source="n_66" target="n_73"></edge>
+<edge source="n_66" target="n_148"></edge>
+<edge source="n_69" target="n_70"></edge>
+<edge source="n_71" target="n_72"></edge>
+<edge source="n_73" target="n_182"></edge>
+<edge source="n_148" target="n_167"></edge>
+</graph>
+</graphml>

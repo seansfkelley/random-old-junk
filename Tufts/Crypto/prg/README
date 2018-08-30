@@ -1,0 +1,36 @@
+Eric Stewart
+Comp 150 CRY
+Fall 2009
+Project - Blum Blum Shub PRG in C
+
+Acknowledgements:
+Dave Hanson's arbitrary precision arithmetic library
+compile script from Norman Ramsey
+collaboration on bitpack module with Wyatt Newport (during a comp40
+  assignment; module is reused here)
+
+Usage:
+sh compile will generate one executable binary, bbs
+
+bbs [seedsize] [numbits]
+
+will generate a pseudorandom number of size [numbits] using a "random" seed of size [seedsize]
+The "random" seed is pulled from /dev/random
+The program will complain about seeds less than 32-bits
+The program will give an alert on stderr if any more bits would make the PRG insecure. In this
+  case, the PRG generated will be shorter than asked for. (this happens when the generator has
+  walked through a cycle of quadratic residues of n)
+
+Design:
+The ap-ext module provides three helper functions for the AP_T interface.
+Specifically, they are:
+  isKnownComposite -  a simple probabalistic prime checker, which uses the Fermat test
+  next_3prime: a function which, given a number n, returns the next prime greater
+    than or equal to n that is congruent to 3 mod 4
+  gcd: a function, which given two numbers a and b, returns gcd(a,b) using the Euclidean
+    algorithm
+
+The bitstream module reads in an arbitrary number of bits from a file and depends on the bitpack
+interface.
+
+The bitpack interface allows a client to pack fields into a word of up to 64 bits.

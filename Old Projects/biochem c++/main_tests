@@ -1,0 +1,9 @@
+./free-energy tests/glutamate fgroups > output/glutamate\ data
+./free-energy tests/histidine fgroups > output/histidine\ data
+./free-energy tests/ATP fgroups > output/ATP\ data
+./free-energy tests/cAMP fgroups > output/cAMP\ data
+./free-energy tests/d-ribose fgroups > output/d-ribose\ data
+./free-energy tests/dextrose fgroups > output/dextrose\ data
+./free-energy tests/phenol fgroups > output/phenol\ data
+./free-energy tests/pyridine fgroups > output/pyridine\ data
+./free-energy tests/tyrosine fgroups > output/tyrosine\ data

@@ -1,0 +1,18 @@
+red=213,13,13
+purple=140,7,173
+yellow=247,233,4
+blue=7,67,238
+teal=4,215,228
+pink=255,112,112
+light blue=114,147,242
+separator=\n
+filename=/Users/sk/Documents/schedule_fall.png
+class_size=14
+height=500
+spacing=10
+
+Prehistoric Archeology,Pearson 104,purple,MW:1800-1915
+Algorithms,Halligan 111A,red,MW:1030-1145
+Graphics,Halligan 111A,yellow,TR:1030-1145
+Linguistics,Lane 100,blue,TR:1500-1615
+Algorithms Recitation,Halligan 111A,pink,R:0900-1015

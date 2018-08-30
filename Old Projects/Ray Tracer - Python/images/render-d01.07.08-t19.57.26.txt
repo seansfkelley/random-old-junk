@@ -1,0 +1,10 @@
+dimensions: 256x256, 65536 pixels total
+time: 0:38:33
+shape count: 11
+camera: <-750, 500, 2000>
+focus: <0, 0, 0>
+grid distance: 548.435
+resolution: 1.000
+rotation: 0.000
+
+notes: Ambient light is back, also added point sources (with cosine shading). The sphere doesn't seem to be affected by non-ambient light, however. The scene seems to be stretched vertically, I don't know why this is.

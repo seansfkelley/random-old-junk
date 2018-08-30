@@ -1,0 +1,10 @@
+dimensions: 512x512, 262144 pixels total
+time: 2:58:17
+shape count: 12
+camera: <-750, 500, 2000>
+focus: <0, 0, 0>
+grid distance: 548.435
+resolution: 2.000
+rotation: 0.000
+
+notes: Tested gradients and a little more about reflection. It was as expected (I didn't change anything, just added gradients). The odd white circle on the sphere is due to the fact that the backdrop plane goes on infintely - so the color on the sphere doesn't fade away as would seem right. Also, the background color is white, and the world is white all around except exactly in the direction the camera is looking.

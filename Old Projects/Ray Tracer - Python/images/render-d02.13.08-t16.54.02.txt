@@ -1,0 +1,10 @@
+dimensions: 64x64, 4096 pixels total
+time: 0:04:18
+shape count: 20
+camera: <1500, 1000, 1000>
+focus: <0, 0, 0>
+grid distance: 1585.810
+resolution: 2.000
+rotation: 0.000
+
+notes: This render's time is just over half that of the previous test. By commenting out a few crucial lines, I ignored all objects between the light and collision point but also cut the render time to 59% of the previous. These loops are costly, I need to find a way to minimize their use. That would be the best optimization.

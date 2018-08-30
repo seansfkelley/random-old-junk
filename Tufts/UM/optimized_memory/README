@@ -1,0 +1,40 @@
+Sarah Nolet (sarah.nolet@tufts.edu)
+Sean Kelley (sean.kelley@tufts.edu)
+
+The only help we received was from Shilpa.
+
+The entire UM instruction set has been correctly implemented and fully tested.
+
+There are three major differences between the designed and final versions.
+
+1. We do not use function pointers for execution of instructions - instead,
+   all the instructions are grouped into a single switch statement.
+
+2. There is no more UM_state struct - the state variables representing the
+   program counter and the registers were changed into local variables of the
+   UM's main function. That architecture was unnecessary when the instructions
+   were being executed in the same function that owned the state variables.
+   In other words, there was no need to pass the state information around to
+   various different functions. Additionally, A, B, and C were simplified into
+   macros so that they would only be accessed when necessary.
+
+3. We replaced the Hanson sequence that held the memory arrays with a native
+   C array for performance reasons. The first element in each array is the
+   length of that array - this allowed us to remove the 'length' sequence.
+   Conceptually speaking, the implementation is almost exactly the same. 
+
+Note: We also changed the design of the first couple unit tests to something we
+felt was more strict than the original design.
+
+The 50-million instruction test consistently takes ~0.44 seconds to complete
+(timed using the 'time' program on one of the lab machines).
+
+Time spent on this assignment:
+  Analysis:   ~2 hours
+  Design:     ~4 hours
+  Implementation:
+    Initial:  ~2 hours
+    Redesign/optimization: ~2 hours
+  Unit tests: ~4 hours
+
+We also included our memory unit tests in this submission.
